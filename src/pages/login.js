@@ -1,25 +1,28 @@
-import Link from "next/link";
-import React from "react";
-import Image from "next/image";
-import logo2 from "../images/logo2.png";
+import Header from "@/components/header";
+import { useRef } from "react";
 
 const Login = () => {
+  //referencia al elemento input
+  const emailInput = useRef();
+
+  function validar() {
+    const email = emailInput.current.value;
+    const EmailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const isEmail = EmailRegex.test(email);
+    if (isEmail) {
+      alert("ok");
+    } else alert("error");
+  }
+
   return (
     <div className="main">
-      <header id="cabecera">
-        <h2 className="logo">AVRYL
-        <Image src={logo2} alt="img" />
-        </h2>
-        <div>
-          <Link href="/">Regresar</Link>
-        </div>
-      </header>
-      <div id="contenedor1">
-        <input type="text" placeholder="usuario" />
+      <Header />
+      <form id="contenedor1">
+        <input type="text" placeholder="email" ref={emailInput} />
+
         <input type="password" placeholder="*******" />
-        <br />
-        <Link href="/contenido"><button>Registro</button></Link> 
-      </div>
+        <button onClick={validar}>Registro</button>
+      </form>
     </div>
   );
 };

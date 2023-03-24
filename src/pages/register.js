@@ -1,17 +1,11 @@
 import React from 'react'
 import Link from "next/link";
-import Image from "next/image";
-import logo2 from "../images/logo2.png";
+import Header from '@/components/header';
 
 function register() {
   return (
     <div className="main">
-    <header id="cabecera">
-      <h2>AVRYL</h2>
-      <div>
-        <Link href="/">Regresar</Link>
-      </div>
-    </header>
+      <Header/>
     <div id="contenedor1">
         <input type="text" placeholder="nombres"/>
         <input type="text" placeholder="apelledos"/>
