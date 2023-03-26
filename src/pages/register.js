@@ -1,6 +1,5 @@
 import Header from '@/components/header';
 import styles from "@/styles/form.module.css";
-import Link from "next/link";
 
 function register() {
   return (
