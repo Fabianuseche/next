@@ -3,6 +3,8 @@ import styles from "@/styles/form.module.css";
 import Link from "next/link";
 
 function register() {
+
+  
   return (
     <div className="main">
       <Header />

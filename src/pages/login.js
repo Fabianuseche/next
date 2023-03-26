@@ -1,25 +1,25 @@
+import { post } from "@/actions/client";
 import Header from "@/components/header";
 import styles from "@/styles/form.module.css";
 import { useRef } from "react";
+import { useRouter } from 'next/router'
 
 const Login = () => {
+  const router = useRouter()
+
   const emailInput = useRef();
   const passInput = useRef();
 
   async function handlesubmit() {
     const credentials = {
       email: emailInput.current.value,
-      pass: passInput.current.value,
+      password: passInput.current.value,
     }
-    console.log(credentials)
 
-    const EmailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const isEmail = EmailRegex.test(credentials.email);
-    if (isEmail) {
-      alert("ok");
-    } else {
-      alert("error");
-    }
+    const res = await post("login", credentials)
+    
+    localStorage.setItem("token", res.token)
+    router.push("/contenido")
   }
 
   return (
