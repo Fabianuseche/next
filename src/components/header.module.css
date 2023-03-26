@@ -1,0 +1,38 @@
+.header {
+    background-color: #26c1e3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header a {
+    margin-right: 20px;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+
+.logo {
+    display: flex;
+    height: 50px;
+}
+
+.logo h2 {
+    margin: 0;
+    font-size: 3rem;
+}
+
+.logo img {
+    height: 90%;
+    width: auto;
+}
+
+@media screen and (max-width: 500px){
+    .header {
+        justify-content: center;
+        padding-bottom: 10px;
+    }
+
+}

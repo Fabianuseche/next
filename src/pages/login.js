@@ -1,28 +1,40 @@
 import Header from "@/components/header";
+import styles from "@/styles/form.module.css";
 import { useRef } from "react";
 
 const Login = () => {
-  //referencia al elemento input
   const emailInput = useRef();
+  const passInput = useRef();
 
-  function validar() {
-    const email = emailInput.current.value;
+  async function handlesubmit() {
+    const credentials = {
+      email: emailInput.current.value,
+      pass: passInput.current.value,
+    }
+    console.log(credentials)
+
     const EmailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const isEmail = EmailRegex.test(email);
+    const isEmail = EmailRegex.test(credentials.email);
     if (isEmail) {
       alert("ok");
-    } else alert("error");
+    } else {
+      alert("error");
+    }
   }
 
   return (
     <div className="main">
       <Header />
-      <form id="contenedor1">
-        <input type="text" placeholder="email" ref={emailInput} />
+      <div className="container">
 
-        <input type="password" placeholder="*******" />
-        <button onClick={validar}>Registro</button>
-      </form>
+        <div className={styles.form} >
+
+          <input type="text" placeholder="email" ref={emailInput} />
+          <input type="password" placeholder="*******" ref={passInput} />
+
+          <button onClick={handlesubmit}>Iniciar Sesión</button>
+        </div>
+      </div>
     </div>
   );
 };

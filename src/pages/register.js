@@ -1,24 +1,25 @@
-import React from 'react'
-import Link from "next/link";
 import Header from '@/components/header';
+import styles from "@/styles/form.module.css";
+import Link from "next/link";
 
 function register() {
   return (
     <div className="main">
-      <Header/>
-    <div id="contenedor1">
-        <input type="text" placeholder="nombres"/>
-        <input type="text" placeholder="apelledos"/>
-        <input type="text" placeholder="telefono"/>
-        <input type="text" placeholder="correo"/>
-        <input type="text" placeholder="ciudad"/>
+      <Header />
+      <div className='container'>
+        <form className={styles.form}>
+          <input type="text" placeholder="nombres" />
+          <input type="text" placeholder="apelledos" />
+          <input type="text" placeholder="telefono" />
+          <input type="text" placeholder="correo" />
+          <input type="text" placeholder="ciudad" />
 
-        <Link href="/contenido"><button>Registro</button></Link>   
-             
-        
+          <button>Registro</button>
+        </form>
+
+      </div>
     </div>
-  </div>
-);
+  );
 };
 
 export default register
