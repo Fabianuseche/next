@@ -12,13 +12,14 @@ export default function Home() {
           <h1 className={styles.dorder}>ASISTENTE VIRTUAL</h1>
           <h1 className={styles.wave}>ASISTENTE VIRTUAL</h1>
         </div>
+        
         <div className="container">
           <h1>Gestiona y cumple tus metas</h1>
           <Link className="btn" href="/empieza">
             EMPIEZA AHORA
           </Link>
-
         </div>
+        
       </div>
     </>
   );
