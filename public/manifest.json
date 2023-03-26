@@ -3,7 +3,7 @@
     "short_name": "Avryl",
     "icons": [
         {
-            "src": "/icons/icono.png",
+            "src": "/icons/icono2.png",
             "sizes": "512x512",
             "type": "image/png"
         }
