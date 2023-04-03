@@ -1,4 +1,4 @@
-import { Html, Head, Main, NextScript } from 'next/document'
+import { Head, Html, Main, NextScript } from 'next/document'
 
 
 //funcion por defecto que trae el framework Nextjs, sirve para colocar la extructura HTML
@@ -6,7 +6,9 @@ import { Html, Head, Main, NextScript } from 'next/document'
 export default function Document() {
   return (
     <Html lang="es">
-      <Head />
+      <Head >
+        <link rel="manifest" href="/manifest.json" />
+      </Head>
       <body>
         <Main />
         <NextScript />

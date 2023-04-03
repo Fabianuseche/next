@@ -17,14 +17,15 @@ export default function Home() {
           <h1 className={styles.border}>ASISTENTE VIRTUAL</h1>
           <h1 className={styles.wave}>ASISTENTE VIRTUAL</h1>
         </div>
+        
         <div className="container">
           <h1>Gestiona y cumple tus metas</h1>
           {/* en Nextjs los Links tambien se deben importar para poderlos usar*/}
           <Link className="btn" href="/empieza">
             EMPIEZA AHORA
           </Link>
-
         </div>
+        
       </div>
     </>
   );
