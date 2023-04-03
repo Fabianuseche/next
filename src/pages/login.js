@@ -1,8 +1,12 @@
 import { post } from "@/actions/client";
 import Header from "@/components/header";
 import styles from "@/styles/form.module.css";
+import { useRouter } from 'next/router';
 import { useRef } from "react";
-import { useRouter } from 'next/router'
+
+//al estar en la carpeta "pages" se vuelve una ruta dinamica creada por el desarrolador
+//donde se ingresa el contenido de la página
+
 
 const Login = () => {
   const router = useRouter()
@@ -17,7 +21,7 @@ const Login = () => {
     }
 
     const res = await post("login", credentials)
-    
+
     localStorage.setItem("token", res.token)
     router.push("/contenido")
   }

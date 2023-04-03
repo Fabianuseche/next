@@ -2,6 +2,8 @@ import Header from '@/components/header';
 import styles from "@/styles/form.module.css";
 import Link from "next/link";
 
+//al estar en la carpeta "pages" se vuelve una ruta dinamica creada por el desarrolador
+//donde se ingresa el contenido de la página
 function register() {
 
   

@@ -1,7 +1,12 @@
+
+
 import Image from "next/image";
 import Link from "next/link";
 import logo2 from "../images/logo2.png";
 import styles from "./header.module.css";
+
+//se crea funcion react que se llama header, la cual de renderiza en las otras rutas
+//para poder manipular la cabecera de la página de forma independiente
 
 function Header() {
   return (
