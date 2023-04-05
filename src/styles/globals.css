@@ -20,6 +20,24 @@ body {
 }
 
 
+
+.links {
+  background-color: #3cdb69;
+  border-radius: 30px ;
+  padding: 12px;
+  color: white;
+  border: none;
+  font-size: 20px;
+  margin-bottom: 100px;
+  text-decoration: none;
+  
+  
+}
+
+.links:hover {
+  background-color: rgb(11, 174, 244);
+  
+}
 .btn {
   background-color: #3cdb69;
   border-radius: 30px;

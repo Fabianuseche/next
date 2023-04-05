@@ -1,28 +1,67 @@
-import Header from '@/components/header';
+import Header from "@/components/header";
 import styles from "@/styles/form.module.css";
+import { useRouter } from "next/router";
+import { useRef } from "react";
+import { register } from "./api/auth";
 
-//al estar en la carpeta "pages" se vuelve una ruta dinamica creada por el desarrolador
-//donde se ingresa el contenido de la página
-function register() {
+function RegisterPage() {
+  const router = useRouter();
 
-  
-  return (
-    <div className="main">
-      <Header />
-      <div className='container'>
-        <form className={styles.form}>
-          <input type="text" placeholder="nombres" />
-          <input type="text" placeholder="apelledos" />
-          <input type="text" placeholder="telefono" />
-          <input type="text" placeholder="correo" />
-          <input type="text" placeholder="ciudad" />
+  const firstnameInput = useRef();
+  const lastnameInput = useRef();
+  const emailInput = useRef();
+  const passwordInput = useRef();
 
-          <button>Registro</button>
-        </form>
+  async function HandleReg() {
+    const datos = {
+      firstname: firstnameInput.current.value,
+      lastname: lastnameInput.current.value,
+      email: emailInput.current.value,
+      password: passwordInput.current.value,
+    };
+    const datosReg = await register(datos);
+    if (datosReg.error) {
+      alert(datosReg.error);
+      return;
+    }
 
+    router.push("/login");
+  }
+
+      return (
+        <div className="main">
+          <Header />
+          <div className="container">
+            <div className={styles.form}>
+              <input
+                name="firstname"
+                type="text"
+            placeholder="nombres"
+            ref={firstnameInput}
+          />
+          <input
+            name="lastname"
+            type="text"
+            placeholder="apellidos"
+            ref={lastnameInput}
+          />
+          <input
+            name="email"
+            type="email"
+            placeholder="correo"
+            ref={emailInput}
+          />
+          <input
+            name="password"
+            type="password"
+            placeholder="contraseña"
+            ref={passwordInput}
+          />
+          <button onClick={HandleReg}>Registro</button>
+        </div>
       </div>
     </div>
   );
-};
+}
 
-export default register
+export default RegisterPage;

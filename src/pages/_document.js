@@ -1,7 +1,7 @@
 import { Head, Html, Main, NextScript } from 'next/document'
 
 
-//funcion por defecto que trae el framework Nextjs, sirve para colocar la extructura HTML
+//función por defecto que trae el framework Nextjs, sirve para colocar la estructura HTML
 //y colocar lo que se requiera en dicha estructura y que se muestre en todas las páginas
 export default function Document() {
   return (

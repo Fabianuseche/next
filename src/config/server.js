@@ -1,5 +1,3 @@
-const config = {
-    secret: process.env.SECRET
-}
 
-export default config
+export const SECRET = process.env.SECRET
+

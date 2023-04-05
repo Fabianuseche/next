@@ -2,9 +2,17 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
     "source.organizeImports": true,
+    "source.fixAll": true
   },
-"editor.formatOnSave": true,
-  "files.associations": {
-    "*.js": "javascriptreact"
-  }
+  "editor.formatOnSave": true,
+  "cSpell.words": [
+    "firstname",
+    "handlesubmit",
+    "Inicialización",
+    "lastname",
+    "nextjs",
+    "Registrese",
+    "regyses",
+    "renderiza"
+  ]
 }

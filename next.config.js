@@ -1,3 +1,4 @@
+const withRpc = require('next-rpc')();
 
 const withPWA = require('next-pwa')({
   dest: 'public'
@@ -8,4 +9,4 @@ const nextConfig = {
   reactStrictMode: true,
 }
 
-module.exports = withPWA(nextConfig)
+module.exports = withRpc(withPWA(nextConfig))

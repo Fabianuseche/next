@@ -16,8 +16,8 @@ function Header() {
         <Image src={logo2} alt="img" />
       </Link>
       <div>
-        <Link href="/register">Registrese</Link>
-        <Link href="/login">Iniciar Sesion</Link>
+        {/* <Link href="/register">Registrese</Link>
+        <Link href="/login">Iniciar Sesion</Link> */}
       </div>
     </header>
   );
