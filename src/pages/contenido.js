@@ -6,6 +6,7 @@ import dayjs from "dayjs";
 import { useEffect, useRef, useState } from "react";
 import { createEvent, deleteEvent, listEvent } from "./api/events";
 import styles from "./contenido.module.css"
+import formstyles from "../styles/form.module.css"
 
 function Contenido() {
   const [events, setEvents] = useState([]);
@@ -58,18 +59,18 @@ function Contenido() {
       <Header />
 
       <div className="container">
-        <h1>CONTENIDO PRINCIPAL</h1>
+       
         <div className={styles.form}>
-          <form onSubmit={addEvent}>
+          <form onSubmit={addEvent} className={formstyles.form}>
             <input type="text" ref={nombre} required placeholder="Nombre del Evento"/>
             <input type="text" ref={lugar} required placeholder="Lugar del Evento"/>
             <input type="date" ref={fecha} required min={dayjs().format('YYYY-MM-DD')}/>
             <input type="time" ref={hora} required />
-            <button className="btn" type="submit" >Añadir evento</button>
+            <button type="submit" >Añadir evento</button>
           </form> 
         </div>
 
-        <div>
+        <div className={styles.eventos}>
           {events.map((event) =>
             <Event date={event.date} name={event.name} lugar={event.lugar} hora={event.hora} key={event.id} remove={() => remove(event.id)} />
           )}

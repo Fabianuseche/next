@@ -7,8 +7,10 @@
 }
 
 .btnLogout {
-    background-color: greenyellow;
+    background-color: rgb(9, 240, 25);
     border-radius: 50px;
+    font-size: 20px;
+    padding: 5px 10px ;
 }
 
 .header a {
@@ -35,6 +37,16 @@
     width: auto;
 }
 
+.alias{
+    color: white;
+    font-size: 20px;
+    
+}
+
+
+
+
+
 @media screen and (max-width: 500px) {
     .header {
         justify-content: center;
@@ -42,3 +54,6 @@
     }
 
 }
+
+  
+  

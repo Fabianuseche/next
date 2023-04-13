@@ -1,5 +1,3 @@
-
-
 import Image from "next/image";
 import Link from "next/link";
 import logo2 from "../images/logo2.png";
@@ -10,9 +8,7 @@ import styles from "./header.module.css";
 //para poder manipular la cabecera de la página de forma independiente
 
 function Header() {
-  const { user, logout } = useAuth()
-
-
+  const { user, logout } = useAuth();
 
   return (
     <header className={styles.header}>
@@ -20,8 +16,17 @@ function Header() {
         <h2>AVRYL</h2>
         <Image src={logo2} alt="img" />
       </Link>
-      <div >
-        {user ? <button onClick={logout} className={styles.btnLogout}>loguot</button> : null}
+
+      <div>
+      {user ? (
+        <>
+          <div className={styles.alias}>Bienvenido {user.firstname } 
+          <button onClick={logout} className={styles.btnLogout}>
+            logout
+          </button>
+          </div>
+        </>
+      ) : null}
       </div>
     </header>
   );
