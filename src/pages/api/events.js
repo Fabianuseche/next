@@ -1,0 +1,24 @@
+import { wrapMethod } from "@/config/server";
+import db from "@/db";
+
+export const config = { rpc: true, wrapMethod }; // enable rpc on this API route
+
+export async function createEvent(data) {
+    await db.insert(data).into("events");
+    return "ok";
+}
+
+
+export async function deleteEvent(id) {
+    await db.from("events").where("id", id).del()
+
+}
+
+export async function listEvent(user_id) {
+    const events = await db
+        .from("events")
+        .where({ user_id: user_id }).orderBy ("date")
+        .select()
+
+    return events;
+}

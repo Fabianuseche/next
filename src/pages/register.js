@@ -3,6 +3,7 @@ import styles from "@/styles/form.module.css";
 import { useRouter } from "next/router";
 import { useRef } from "react";
 import { register } from "./api/auth";
+import Footer from "@/components/footer";
 
 function RegisterPage() {
   const router = useRouter();
@@ -59,7 +60,9 @@ function RegisterPage() {
           />
           <button onClick={HandleReg}>Registro</button>
         </div>
+        
       </div>
+      <Footer/>
     </div>
   );
 }

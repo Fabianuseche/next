@@ -1,6 +1,7 @@
 import Header from "@/components/header";
 import Link from "next/link";
 import styles from "./index.module.css";
+import Footer from "@/components/footer";
 
 
 //al estar en la carpeta "pages" se vuelve una ruta dinámica creada por el desarrollador
@@ -11,7 +12,7 @@ export default function Home() {
       {/* en nextjs no hay clases sino className, ya que class es una palabra reservada de js*/}
       <div className="main">
         {/* se renderiza el componente Header creado en /components/header.js*/}
-        <Header></Header>
+        <Header />
 
         {/* se pueden importar estilos globales y locales, si es locales toca 
         llamar el archivo con la palabra module, después se importa y se usa con la clase de la etiqueta*/}
@@ -32,7 +33,7 @@ export default function Home() {
             EMPIEZA AHORA
           </Link>
         </div>
-
+        <Footer/>
       </div>
     </>
   );

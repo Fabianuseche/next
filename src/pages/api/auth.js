@@ -1,19 +1,6 @@
-import { SECRET } from "@/config/server";
+import { wrapMethod } from "@/config/server";
 import db from "@/db";
 import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
-
-const wrapMethod = (method, meta) => {
-  return async (...args) => {
-    try {
-      const result = await method(...args);
-      return resul
-    } catch (error) {
-      console.error(error)
-      return { error: "hubo un error inesperado" }
-    }
-  };
-};
 
 export const config = { rpc: true, wrapMethod }; // enable rpc on this API route
 
@@ -25,7 +12,6 @@ export async function register(data) {
   await db.insert(data).into("users");
 
   return "ok";
-
 }
 
 export async function login(credentials) {
@@ -43,15 +29,9 @@ export async function login(credentials) {
     return { error: "contraseña incorrecta" };
   }
 
-  const token = jwt.sign(
-    {
-      email: user.email,
-      id: user.id,
-    },
-    SECRET
-  );
+  delete user.password
 
-  return { token };
+  return { user };
 }
 
 

@@ -1,0 +1,13 @@
+.form input{
+  font-size: 15px;
+  height: 30px; 
+  background-color:azure ;
+}
+
+.form button{
+  margin-left: 20px;
+  font-size: 1.1rem;
+  height: auto; 
+  background-color: lawngreen ;
+  font-family:  Arial, Helvetica, sans-serif;
+}

@@ -1,4 +1,6 @@
 // Importación de módulos y componentes necesarios
+import { useAuth } from "@/components/auth";
+import Footer from "@/components/footer";
 import Header from "@/components/header"; // Importación del componente Header desde la ruta "@/components/header"
 import { login } from "@/pages/api/auth"; // Importación de la función de autenticación de la ruta "@/pages/api/auth"
 import styles from "@/styles/form.module.css"; // Importación de estilos CSS desde la ruta "@/styles/form.module.css"
@@ -12,6 +14,8 @@ const LoginPage = () => {
   const emailInput = useRef(); // Creación de una referencia al input de email usando el hook useRef
   const passInput = useRef(); // Creación de una referencia al input de contraseña usando el hook useRef
 
+  const auth = useAuth()
+
   // Función asincrónica que maneja el envío del formulario
   async function handlesubmit() {
     const credentials = {
@@ -19,15 +23,13 @@ const LoginPage = () => {
       password: passInput.current.value, // Obtención del valor del input de contraseña a través de la referencia passInput
     }
 
-    const response = await login(credentials); // Llamada a la función de autenticación con las credenciales ingresadas
-    if (response.error) { // Verificación si la respuesta contiene un error
-      alert(response.error); // Mostrar una alerta con el mensaje de error
+    const { user, error } = await login(credentials); // Llamada a la función de autenticación con las credenciales ingresadas
+    if (error) { // Verificación si la respuesta contiene un error
+      alert(error); // Mostrar una alerta con el mensaje de error
       return;
     }
 
-    localStorage.setItem("token", response.token); // Almacenamiento del token de autenticación en el almacenamiento local del navegador
-
-    router.push("/contenido"); // Redirección a la página de contenido usando el hook useRouter y la función push
+    auth.login(user)
   }
 
   // Retorno del componente LoginPage
@@ -41,7 +43,9 @@ const LoginPage = () => {
 
           <button onClick={handlesubmit}>Iniciar Sesión</button> {/* Renderización del botón de inicio de sesión con el evento onClick que llama a la función handlesubmit */}
         </div>
+        
       </div>
+      <Footer/>
     </div>
   );
 };
