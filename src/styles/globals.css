@@ -24,7 +24,11 @@ body {
   padding: 20px;
 }
 
-
+.container h1{
+  font-family: 'Charm', cursive;
+  color: bisque;
+    
+}
 
 .links {
   background-color: #3cdb69;

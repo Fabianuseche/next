@@ -2,6 +2,10 @@ import Header from "@/components/header";
 import Link from "next/link";
 import styles from "./index.module.css";
 import Footer from "@/components/footer";
+import Image from "next/image";
+import eventos from "../images/Eventos.png";
+import Calendar from "../images/Calendar.png";
+import facturas from "../images/facturas.png";
 
 
 //al estar en la carpeta "pages" se vuelve una ruta dinámica creada por el desarrollador
@@ -27,12 +31,19 @@ export default function Home() {
             <Link className="links" href="/register">Registrese</Link>
             <Link className="links" href="/login">Iniciar Sesión</Link>
           </div>
-          <h1>Gestiona y cumple tus metas</h1>
-          {/* en Nextjs los Links también se deben importar para poderlos usar*/}
-          <Link className="btn" href="/empieza">
-            EMPIEZA AHORA
-          </Link>
+          <h1>Gestiona tus eventos, citas, tareas, etc.</h1>
+          {/* en Nextjs los Links y las imagenes también se deben importar para poderlos usar*/}
+          <div>
+         
+        <Image src={Calendar} alt="calendar" className={styles.slider}/>
+   
+          </div>
+        
+       
         </div>
+        
+        
+       
         <Footer/>
       </div>
     </>
