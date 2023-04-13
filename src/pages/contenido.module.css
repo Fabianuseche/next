@@ -1,13 +1,50 @@
+.form{
+
+  display:flex ;
+  
+}
+
+
 .form input{
   font-size: 15px;
   height: 30px; 
   background-color:azure ;
+  display: flex;
+  
+  margin: 10px;
+ 
 }
 
 .form button{
-  margin-left: 20px;
+  
   font-size: 1.1rem;
   height: auto; 
   background-color: lawngreen ;
   font-family:  Arial, Helvetica, sans-serif;
+}
+
+.inputs{
+  margin: 1px;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputs input[ type="text"],
+.inputs input[ type="date"]
+{
+  margin: 2px;
+  border-radius: 5px ;
+
+}
+.inputs input[ type="time"]{
+  margin: 2px;
+  border-radius: 5px ;
+ margin-bottom: 20px;
+  
+}
+
+
+.eventos{
+  max-width: 1000px;
+  width: 100%;
 }
