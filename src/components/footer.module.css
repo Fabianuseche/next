@@ -4,3 +4,12 @@
     justify-content: center;
     
 }
+
+.btnLogout {
+    background-color: rgb(9, 240, 25);
+    border-radius: 50px;
+    font-size: 20px;
+    padding: 5px 10px ;
+    color: white;
+    font-weight: bold;
+}

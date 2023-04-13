@@ -18,15 +18,14 @@ function Header() {
       </Link>
 
       <div>
-      {user ? (
-        <>
-          <div className={styles.alias}>Bienvenido {user.firstname } 
-          <button onClick={logout} className={styles.btnLogout}>
-            logout
-          </button>
-          </div>
-        </>
-      ) : null}
+        {user ? (
+          <>
+            <div className={styles.alias}>
+              Bienvenido {user.firstname}
+              
+            </div>
+          </>
+        ) : null}
       </div>
     </header>
   );
