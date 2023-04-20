@@ -21,7 +21,7 @@ function Header() {
         {user ? (
           <>
             <div className={styles.alias}>
-              Bienvenido {user.firstname}
+               {user.firstname} {user.lastname}
               
             </div>
           </>

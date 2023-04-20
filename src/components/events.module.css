@@ -1,79 +1,75 @@
+.event button {
+  border: none;
+  background-color: red;
+  padding: 5px;
+  color: white;
+  border-radius: 5px;
+}
 
+.event {
+  border: solid 1px black;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: black;
+  margin-top: 20px;
+  background-color: aliceblue;
+  flex-wrap: wrap;
+}
 
-  .event button {
-    border: none;
-    background-color: red;
-    padding: 5px;
-    color: white;
-    border-radius: 5px;
-  }
-  
-  .event {
-    
-    border: solid 1px black;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: black;
-    margin-top: 20px;
-    background-color: aliceblue;
-    flex-wrap: wrap;
-  }
+.expiring {
+  color: red;
+  font-weight: bold;
+  display: flex;
+  flex-wrap: wrap;
+}
 
-  
-  
-  .event .days {
+.event .days {
+  text-align: center;
+}
+.event .days .daysnumber {
+  font-size: 30px;
+  font-weight: bold;
+  display: block;
+}
+.event .eventname {
+  padding: 10px;
+}
+.event .eventdate {
+  padding: 10px;
+}
+
+.event .eventlugar {
+  padding: 10px;
+}
+
+.event .eventhora {
+  padding: 10px;
+}
+.event .actions {
+  padding: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+  .expiring {
+    width: 80px;
     text-align: center;
-    
-  }
-  .event .days .daysnumber {
-    font-size: 30px;
-    font-weight: bold;
-    display: block;
-  }
-  .event .eventname {
-    padding: 10px;
-    
-  }
-  .event .eventdate {
-    padding: 10px;
-    
-  }
 
-  .event .eventlugar {
-    padding: 10px;
-    
   }
-
-  .event .eventhora {
-    padding: 10px;
-    
+}
+@media screen and (max-width: 700px) {
+  .event > div {
+    width: 33%;
   }
-  .event .actions {
-    padding: 10px;
+}
+@media screen and (max-width: 400px) {
+  .event {
+    font-size: 10px;
   }
-
-  @media screen and (max-width: 500px) {
-    .event > div {
-     
-      width: 33%;
-   
-  
-    }
-  
+}
+@media screen and (max-width: 300px) {
+  .event {
+    font-size: 7px;
   }
-  @media screen and (max-width: 400px) {
-    .event  {
-      font-size: 10px;
-  
-    }
-  
-  }
-  @media screen and (max-width: 300px) {
-    .event  {
-      font-size: 7px;
-  
-    }
-  
-  }
+}
