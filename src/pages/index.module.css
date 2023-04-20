@@ -6,7 +6,7 @@
 }
 
 .titulo h1 {
-    font-size: 5rem;
+    font-size: 4rem;
     position: absolute;
     
 }
@@ -28,6 +28,11 @@
     display: flex;
 }
 
+.slider:hover{
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    width: 230px;
+    height: 230px;
+}
 
 @keyframes wave {
     0%,

@@ -1,5 +1,5 @@
 .header {
-    background-color: #26c1e3;
+    background-color: rgba(23, 242, 235, 0.703);;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -15,7 +15,7 @@
 
 .header a {
     margin-right: 20px;
-    color: white;
+    color: rgba(0, 0, 255, 0.591);
     font-size: 20px;
     text-decoration: none;
 
@@ -32,15 +32,21 @@
     font-size: 3rem;
 }
 
+.logo h2:hover {
+    font-size: 3.2rem; 
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+
 .logo img {
     height: 90%;
     width: auto;
 }
 
 .alias{
-    color: white;
+    color: rgba(0, 0, 255, 0.591);
     font-size: 20px;
-    
+    font-weight: bold;
 }
 
 

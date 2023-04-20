@@ -11,10 +11,7 @@ body {
 }
 
 .container {
-  background: linear-gradient(180deg,
-      #0ad9f5 0%,
-      rgba(0, 56, 255, 0.36) 0.01%,
-      rgba(10, 218, 247, 0.83) 100%);
+  background-color: rgba(23, 242, 235, 0.231);
   min-height: calc(100vh - 110px);
   display: flex;
   flex-direction: column;
@@ -26,7 +23,7 @@ body {
 
 .container h1{
   font-family: 'Charm', cursive;
-  color: bisque;
+  color: black;
     
 }
 

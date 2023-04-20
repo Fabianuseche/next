@@ -1,15 +1,21 @@
 .foot{
-    background-color: rgb(6, 147, 147);
+    background-color: rgba(44, 158, 154, 0.621);;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     
 }
 
 .btnLogout {
-    background-color: rgb(9, 240, 25);
-    border-radius: 50px;
-    font-size: 20px;
+    background-color: rgba(9, 121, 240, 0.765);
+    border-radius: 1rem;
+    font-size: 1rem;
     padding: 5px 10px ;
     color: white;
     font-weight: bold;
+    
+}
+
+.btnLogout:hover{
+
+    background-color: green;
 }
