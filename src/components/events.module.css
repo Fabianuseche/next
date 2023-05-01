@@ -1,3 +1,5 @@
+/* estilos del boton eliminar en el evento creado*/
+
 .event button {
   border: none;
   background-color: red;
@@ -5,7 +7,7 @@
   color: white;
   border-radius: 5px;
 }
-
+/* estilos de la caja evento */
 .event {
   border: solid 1px black;
   padding: 10px;
@@ -17,22 +19,25 @@
   background-color: aliceblue;
   flex-wrap: wrap;
 }
-
+/* estilos del proximo a vencer */
 .expiring {
   color: red;
   font-weight: bold;
   display: flex;
   flex-wrap: wrap;
 }
-
+/* estilos del dia que faltan para vencer */
 .event .days {
   text-align: center;
 }
+
+/* mas estilos del dia que faltan para vencer */
 .event .days .daysnumber {
   font-size: 30px;
   font-weight: bold;
   display: block;
 }
+
 .event .eventname {
   padding: 10px;
 }

@@ -1,4 +1,37 @@
 
+:root {
+  --color-font-:rgb(0, 0, 0);
+  --color-background:rgba(255, 255, 255, 0);
+  --color-btnindex:black;
+  --color-btnindexhover: white;
+  --color-btnindexhoverletra: black;
+  
+}
+.tema0{
+  --color-font-:black;
+  --color-background:rgba(23, 242, 213, 0.402);
+ 
+}
+
+.tema1{
+  --color-background:rgba(5, 254, 18, 0.317);
+  --color-font-:black;
+}
+.tema2{
+  --color-background:rgba(255, 166, 0, 0.4) ;
+
+}
+.tema3{
+  --color-background:rgba(254, 5, 229, 0.324);
+  --color-font-:purple;
+}
+
+.tema4{
+  --color-background:rgba(0, 0, 0, 0.432);
+  --color-font-:white;
+}
+
+
 
 html,
 body {
@@ -11,24 +44,27 @@ body {
 }
 
 .container {
-  background-color: rgba(23, 242, 235, 0.231);
+  background-color: var(--color-background);
   min-height: calc(100vh - 110px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: white;
-  padding: 20px;
+  padding: 50px;
+  justify-content: flex-start;
+  position: relative;
+  
 }
 
 .container h1{
   font-family: 'Charm', cursive;
-  color: black;
+  color: var(--color-font-);
     
 }
 
 .links {
-  background-color: #3cdb69;
+  background-color:var(--color-btnindex);
   border-radius: 30px ;
   padding: 12px;
   color: white;
@@ -41,11 +77,14 @@ body {
 }
 
 .links:hover {
-  background-color: rgb(11, 174, 244);
+  background-color: var(--color-btnindexhover);
+  color:var(--color-btnindexhoverletra);
+  font-weight: bold;
+  border: solid 1px black;
   
 }
 .btn {
-  background-color: #3cdb69;
+  background-color: #00fa47;
   border-radius: 30px;
   padding: 20px;
   color: white;
@@ -54,7 +93,7 @@ body {
   font-weight: bolder;
   margin-bottom: 80px;
   text-decoration: none;
-}
+} 
 
 
 .btn:hover {
@@ -73,3 +112,4 @@ h1 {
   }
 
 }
+

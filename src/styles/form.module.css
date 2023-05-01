@@ -1,4 +1,8 @@
-.form {
+
+
+/* por dentro de la caja y fera de los input */
+
+.form{
     background-color: white;
     border-radius: 20px;
     padding: 20px;
@@ -7,25 +11,32 @@
     
 }
 
+
+/* por dentro de los input y bordeado de los mismos*/  
 .form input {
     border-radius: 20px;
     font-size: 20px;
-    border: 1px solid rgb(11, 174, 244);
+    border: 1px solid black;
     margin-bottom: 20px;
     display: block;
     padding: 4px 10px;
     width: 100%;
+
+ /* boton añadir evento*/   
 }
 .form button{
     border-radius: 20px;
     padding: 10px;
     border: none;
-    background-color: rgb(9, 240, 25);
+    background-color:black;
     font-weight: bold;
-    color: black;
+    color: white;
+    font-size: 1.2em;
 }
 
 .form button:hover{
-
-    background-color:  rgb(11, 174, 244);
+    color: black;
+    background-color: white;
+    font-weight: bold;
+    border: solid 2px black;
 }

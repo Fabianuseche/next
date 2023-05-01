@@ -20,7 +20,7 @@ const Footer = () => {
       {user ? (
         <button onClick={logout} className={styles.btnLogout}>
           {" "}
-          logout
+          Logout
         </button>
       ) : null}
     </div>

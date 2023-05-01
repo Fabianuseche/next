@@ -1,7 +1,7 @@
 import { wrapMethod } from "@/config/server";
 import db from "@/db";
 
-export const config = { rpc: true, wrapMethod }; // enable rpc on this API route
+export const config = { rpc: true, wrapMethod }; 
 
 export async function createEvent(data) {
   await db.insert(data).into("events");

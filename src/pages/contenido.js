@@ -4,13 +4,19 @@ import Footer from "@/components/footer";
 import Header from "@/components/header";
 import dayjs from "dayjs";
 import { useEffect, useRef, useState } from "react";
-import formstyles from "../styles/form.module.css";
+/*import formstyles from "../styles/form.module.css";*/
 import { createEvent, deleteEvent, listEvent } from "./api/events";
 import styles from "./contenido.module.css";
+import Temas from "@/components/temas.js"
+
+
 
 function Contenido() {
   const [events, setEvents] = useState([]);
   const { user } = useAuth();
+
+ 
+ 
 
   const nombre = useRef();
   const lugar = useRef();
@@ -61,9 +67,11 @@ const remove = async (id) => { // Definir una función asíncrona llamada 'remov
     <div>
       <Header />
 
-      <div className="container">
-        <div className={styles.form}>
-          <form onSubmit={addEvent} className={formstyles.form}>
+      <div className={`main container`}>
+        <Temas/>
+     
+        <div >
+          <form onSubmit={addEvent} className={styles.form}>
             <input
               type="text"
               ref={nombre}
@@ -105,6 +113,7 @@ const remove = async (id) => { // Definir una función asíncrona llamada 'remov
             />
           ))}
         </div>
+        
       </div>
       <Footer />
     </div>

@@ -1,28 +1,80 @@
-.form{
 
-  display:flex ;
+.form{
+  --color-forminput :rgb(0, 0, 0);
+  --color-formboton: rgb(0, 0, 0);
+  --color-formbotonletra:rgb(255, 255, 255);
+  --color-botonhover:rgb(255, 255, 255);
+  --color-botonhoverletra:rgb(0, 0, 0);
+
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border: solid 1px black;
   
 }
 
-
+:global(body.tema0) .form {
+  --color-forminput :rgb(11, 174, 244);
+  --color-formboton: rgb(11, 174, 244);
+  --color-botonhover:rgba(51, 166, 215, 0.452);
+  --color-botonhoverletra:rgb(0, 0, 0);
+}
+:global(body.tema1) .form {
+  --color-forminput :rgb(60, 255, 0);
+  --color-formboton: rgb(89, 244, 11);
+  --color-formbotonletra:rgb(0, 0, 0);
+  --color-botonhover:rgba(91, 247, 0, 0.502);
+  --color-botonhoverletra:rgb(0, 0, 0);
+}
+:global(body.tema2) .form {
+  --color-forminput :rgb(244, 147, 11);
+  --color-formboton: rgb(244, 155, 11);
+  --color-formbotonletra: rgba(0, 0, 0, 0.975);
+  --color-botonhover:rgba(252, 134, 0, 0.557);
+  --color-botonhoverletra:rgb(0, 0, 0);
+}
+:global(body.tema3) .form {
+  --color-forminput :rgb(244, 11, 244);
+  --color-formboton: rgb(244, 11, 170);
+  --color-formbotonletra:rgb(0, 0, 0);
+  --color-botonhover:rgba(244, 11, 170, 0.486);
+  --color-botonhoverletra:rgb(0, 0, 0);
+}
+:global(body.tema4) .form {
+  --color-forminput :rgb(0, 0, 0);
+  --color-formboton: rgb(0, 0, 0);
+  --color-formbotonletra:rgb(255, 255, 255);
+  --color-botonhover:white;
+  --color-botonhoverletra:rgb(0, 0, 0);
+}
 .form input{
-  font-size: 15px;
-  height: 30px; 
-  background-color:azure ;
-  display: flex;
-  
-  margin: 10px;
+    border-radius: 20px;
+    font-size: 20px;
+    border: 1px solid var(--color-forminput);
+    margin-bottom: 20px;
+    display: block;
+    padding: 4px 10px;
+    width: 100%;
  
 }
 
 .form button{
   
-  font-size: 1.1rem;
-  height: auto; 
-  background-color: lawngreen ;
-  font-family:  Arial, Helvetica, sans-serif;
+    border-radius: 20px;
+    padding: 10px;
+    border: none;
+    background-color:var(--color-formboton) ;
+    font-weight: bold;
+    color: var(--color-formbotonletra);
+    font-size: 1.3em;
+    border: solid 1px black;
 }
-
+.form button:hover{
+  color: var(--color-botonhoverletra);
+  background-color: var(--color-botonhover);
+}
 .inputs{
   margin: 1px;
   display: flex;
@@ -39,7 +91,7 @@
 .inputs input[ type="time"]{
   margin: 2px;
   border-radius: 5px ;
- margin-bottom: 20px;
+  margin-bottom: 20px;
   
 }
 
@@ -47,4 +99,5 @@
 .eventos{
   max-width: 1000px;
   width: 100%;
+  
 }

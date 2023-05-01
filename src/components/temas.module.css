@@ -1,0 +1,19 @@
+
+
+.change{
+    --color-botontema:rgb(9, 0, 0);
+
+    color: var(--color-botontema);
+    position: absolute ;
+    top: 0;
+    right: 0;
+    height: 30px;
+    width: 80px;
+    border-radius: 20px;
+    background-color: transparent;
+    font-weight: bold;
+  }
+  :global(body.tema4) .change {
+    --color-botontema:rgb(255, 255, 255);
+    
+}
