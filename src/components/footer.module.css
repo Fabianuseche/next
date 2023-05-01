@@ -1,21 +1,65 @@
 .foot{
-    background-color: rgba(44, 158, 154, 0.621);;
+   --color-foot: black;
+    --color-boton: white;
+    --color-hover: black;
+    --color-letrabtn: black;    
+    --color-letraHover:white;
+
+    background-color: var(--color-foot);
     display: flex;
     justify-content: space-evenly;
     
 }
 
+
+:global(body.tema0) .foot{
+    --color-foot: rgba(44, 158, 154, 0.621);
+    --color-boton: rgb(11, 174, 244);
+    --color-hover: rgba(11, 174, 244, 0.434);
+    --color-letrabtn: white;    
+    --color-letraHover:black;
+ }
+ :global(body.tema1) .foot{
+    --color-foot: rgba(3, 243, 23, 0.998);
+     --color-boton: rgba(9, 255, 5, 0.868);
+     --color-hover: rgb(9, 255, 5);
+     --color-letrabtn: rgb(255, 255, 255); 
+     --color-letraHover:black;
+ }
+ :global(body.tema2) .foot{
+    --color-foot: rgba(191, 126, 4, 0.989);
+    --color-boton: rgb(255, 80, 5);
+    --color-hover: rgb(255, 255, 5);
+    --color-letrabtn: rgb(255, 255, 255); 
+    --color-letraHover:black;
+   
+ }
+
+ :global(body.tema3) .foot{
+    --color-foot: rgba(243, 3, 167, 0.621);
+     --color-boton: rgba(240, 9, 163, 0.977);
+     --color-hover: violet;
+   
+ }
+ :global(body.tema4) .foot{
+    --color-foot: rgb(60, 58, 58);
+     --color-boton: black;
+     --color-hover: rgb(116, 108, 108);
+     --color-letrabtn: white;  
+   
+ }
+
 .btnLogout {
-    background-color: rgba(9, 121, 240, 0.765);
-    border-radius: 1rem;
+    background-color: var(--color-boton);
+    border-radius: 8rem;
     font-size: 1rem;
     padding: 5px 10px ;
-    color: white;
+    color: var(--color-letrabtn);   
     font-weight: bold;
     
 }
 
 .btnLogout:hover{
-
-    background-color: green;
+    color: var(--color-letraHover);
+    background-color: var(--color-hover);
 }

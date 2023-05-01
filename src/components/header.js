@@ -13,19 +13,19 @@ function Header() {
   return (
     <header className={styles.header}>
       <Link href="/" className={styles.logo}>
-        <h2>AVRYL</h2>
+        <h2>My AVRYL</h2>
         <Image src={logo2} alt="img" />
       </Link>
 
       <div>
         {user ? (
           <>
-            <div className={styles.alias}>
-               {user.firstname} {user.lastname}
-              
+            <div >
+              {user.firstname} {user.lastname}
             </div>
           </>
         ) : null}
+        
       </div>
     </header>
   );

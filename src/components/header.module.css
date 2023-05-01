@@ -1,21 +1,52 @@
-.header {
-    background-color: rgba(23, 242, 235, 0.703);;
+
+.header {   
+    --colorbackground: black;
+    --colora: white;
+    --coloralias: white;
+
+    background-color: var(--colorbackground);
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 }
 
-.btnLogout {
+
+:global(body.tema0) .header {
+    --colorbackground: rgba(23, 242, 235, 0.703);
+    --colora: rgba(0, 0, 255, 0.591);
+    --coloralias: rgb(0, 0, 255);
+}
+:global(body.tema1) .header {
+    --colora: rgba(0, 0, 0, 0.982);
+    --colorbackground: rgba(23, 242, 27, 0.703);
+    --coloralias: rgb(0, 0, 0);
+}
+:global(body.tema2) .header {
+    --colora: black;
+    --colorbackground: rgba(254, 102, 0, 0.991);
+    --coloralias: black;
+}
+:global(body.tema3) .header {
+    --colora: rgba(255, 0, 38, 0.66);
+    --colorbackground: rgb(252, 0, 235);
+    --coloralias: rgba(255, 0, 38, 0.929);   
+}
+:global(body.tema4) .header {
+    --colora: rgb(255, 254, 254);
+    --colorbackground: rgb(101, 96, 96);
+    --coloralias: rgb(255, 255, 255);
+}
+/* .btnLogout {
     background-color: rgb(9, 240, 25);
     border-radius: 50px;
     font-size: 20px;
     padding: 5px 10px ;
-}
+} */
 
 .header a {
     margin-right: 20px;
-    color: rgba(0, 0, 255, 0.591);
+    color: var(--colora);
     font-size: 20px;
     text-decoration: none;
 
@@ -43,13 +74,11 @@
     width: auto;
 }
 
-.alias{
-    color: rgba(0, 0, 255, 0.591);
+.header{
+    color: var(--coloralias);
     font-size: 20px;
     font-weight: bold;
 }
-
-
 
 
 

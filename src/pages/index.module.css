@@ -1,8 +1,70 @@
+.wave{
+    --color-dos: gray; 
+}   
+:global(body.tema0) .wave{   
+    --color-dos:rgb(38, 0, 255);   
+}
+:global(body.tema1) .wave{  
+    --color-dos:rgb(0, 255, 8);   
+}
+:global(body.tema2) .wave{  
+    --color-dos:rgb(255, 0, 0); 
+}
+:global(body.tema3) .wave{  
+    --color-dos:rgb(255, 0, 242); 
+}
+:global(body.tema4) .wave{
+    --color-dos:rgb(174, 157, 157); 
+  
+}
+
+.border{
+    --color-uno: rgb(0, 0, 0); 
+}   
+:global(body.tema0) .border{   
+    --color-uno:rgb(0, 0, 0);   
+}
+:global(body.tema1) .border{  
+    --color-uno:rgb(0, 0, 0);   
+}
+:global(body.tema2) .border{  
+    --color-uno:rgb(0, 0, 0); 
+}
+:global(body.tema3) .border{  
+    --color-uno:rgb(0, 0, 0); 
+}
+:global(body.tema4) .border{
+    --color-uno:rgb(0, 0, 0); 
+    
+}
+
+
+.slider{
+    --color-tres: rgb(0, 0, 0); 
+}   
+:global(body.tema0) .slider{   
+    --color-tres:rgb(0, 0, 0);   
+}
+:global(body.tema1) .slider{  
+    --color-tres:rgb(0, 0, 0);   
+}
+:global(body.tema2) .slider{  
+    --color-tres:rgb(0, 0, 0); 
+}
+:global(body.tema3) .slider{  
+    --color-tres:rgb(0, 0, 0); 
+}
+:global(body.tema4) .slider{
+    --color-tres:gray; 
+}
+
+
 .titulo {
     display: flex;
     justify-content: center;
-    color: rgb(223, 223, 237);
     text-align: center;
+    
+    
 }
 
 .titulo h1 {
@@ -11,15 +73,19 @@
     
 }
 
+
+
 .border {
-    color: rgb(0, 223, 252);
+    color: var(--color-uno);
     text-shadow: -1px -1px 0 white, 1px -1px 0 white, 1px 1px 0 white,
         -1px 1px 0 white;
+        
 }
 
 .wave {
-    color: #09f;
+    color: var(--color-dos);
     animation: wave 3s ease-in-out infinite;
+    
 }
 
 .slider{
@@ -29,9 +95,7 @@
 }
 
 .slider:hover{
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    width: 230px;
-    height: 230px;
+    box-shadow: 0 0 10px var(--color-tres);
 }
 
 @keyframes wave {
