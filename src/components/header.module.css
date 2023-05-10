@@ -24,13 +24,13 @@
 }
 :global(body.tema2) .header {
     --colora: black;
-    --colorbackground: rgba(254, 102, 0, 0.991);
+    --colorbackground: rgba(254, 102, 0, 0.664);
     --coloralias: black;
 }
 :global(body.tema3) .header {
-    --colora: rgba(255, 0, 38, 0.66);
+    --colora: rgba(2, 0, 0, 0.934);
     --colorbackground: rgb(252, 0, 235);
-    --coloralias: rgba(255, 0, 38, 0.929);   
+    --coloralias: rgba(0, 0, 0, 0.929);   
 }
 :global(body.tema4) .header {
     --colora: rgb(255, 254, 254);

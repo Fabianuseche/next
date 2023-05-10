@@ -48,13 +48,16 @@ export default function Home() {
             
           </div>
           {!user && (
-            <div>
-              <Link className="links" href="/register">
-                Registrese
-              </Link>
-              <Link className="links" href="/login">
+            <div className={styles.papabtnindex}>
+              <Link className={styles.btnindex} href="/login">
                 Iniciar Sesión
               </Link>
+              <Link className={styles.btnindex} href="/register">
+                Registrese
+              </Link>
+              <Link className={styles.btnindex}href="/forget">
+              ¿Olvidaste tu contraseña?
+            </Link>
               
             </div>
             
@@ -62,6 +65,7 @@ export default function Home() {
           <br/><br/><br/>
           
         </div>
+            
         <Footer />
       </div>
     </>
