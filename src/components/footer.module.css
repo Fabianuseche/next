@@ -27,7 +27,7 @@
      --color-letraHover:black;
  }
  :global(body.tema2) .foot{
-    --color-foot: rgba(191, 126, 4, 0.989);
+    --color-foot: rgba(239, 158, 8, 0.662);
     --color-boton: rgb(255, 80, 5);
     --color-hover: rgb(255, 255, 5);
     --color-letrabtn: rgb(255, 255, 255); 

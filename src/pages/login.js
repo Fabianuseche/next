@@ -18,6 +18,11 @@ const LoginPage = () => {
 
   // Función asincrónica que maneja el envío del formulario
   async function handlesubmit() {
+
+    if (!emailInput.current.value || !passInput.current.value) {
+      alert("Por favor complete los campos de correo electrónico y contraseña");
+      return;
+    }
     const credentials = {
       email: emailInput.current.value, // Obtención del valor del input de email a través de la referencia emailInput
       password: passInput.current.value, // Obtención del valor del input de contraseña a través de la referencia passInput
@@ -38,8 +43,8 @@ const LoginPage = () => {
       <Header /> {/* Renderización del componente Header */}
       <div className="container">
         <div className={styles.form} >
-          <input type="email" placeholder="email" ref={emailInput} /> {/* Renderización del input de email con la referencia emailInput */}
-          <input type="password" placeholder="*******" ref={passInput} /> {/* Renderización del input de contraseña con la referencia passInput */}
+          <input type="email" placeholder="email" ref={emailInput} required/> {/* Renderización del input de email con la referencia emailInput */}
+          <input type="password" placeholder="*******" ref={passInput} required/> {/* Renderización del input de contraseña con la referencia passInput */}
 
           <button onClick={handlesubmit}>Iniciar Sesión</button> {/* Renderización del botón de inicio de sesión con el evento onClick que llama a la función handlesubmit */}
         </div>

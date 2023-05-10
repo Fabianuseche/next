@@ -92,11 +92,43 @@
     width: 200px;
     height: 200px;
     display: flex;
+    margin: 10px;
+    
 }
 
 .slider:hover{
     box-shadow: 0 0 10px var(--color-tres);
 }
+
+.papabtnindex{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+.btnindex {
+   
+    background-color:var(--color-btnindex);
+    border-radius: 30px ;
+    padding: 12px;
+    color: white;
+    border: none;
+    font-size: 20px;
+    margin-bottom: 100px;
+    text-decoration: none;
+    margin: 0;
+    margin-top: 5px;
+    padding: 10;
+    
+  }
+  
+  .btnindex:hover {
+    background-color: var(--color-btnindexhover);
+    color:var(--color-btnindexhoverletra);
+    font-weight: bold;
+    border: solid 1px black;
+    
+  }
 
 @keyframes wave {
     0%,
