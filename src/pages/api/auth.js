@@ -18,17 +18,23 @@ export async function forgetPass(correo) {
   // verificar si el email existe
 
   const token = jwt.sign({ email: correo }, process.env.SECRET);
+  console.log(token);
 
   const redirectUrl = `${process.env.URL_APP}/reset?token=${token}`;
 
-
-  
   let message = {
     from: "fabianusecherueda@gmail.com",
     to: correo,
     subject: "Restablecer contraseña",
     html: `<p>Link para resestablecer contraseña: <br> <a href="${redirectUrl}">${redirectUrl}</a></p>`,
   };
+
+  console.log(mailer, {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASSWORD,
+  });
+
+  console.log(message);
 
   mailer.sendMail(message, (error, info) => {
     if (error) {
