@@ -36,13 +36,17 @@ export async function forgetPass(correo) {
 
   console.log(message);
 
-  mailer.sendMail(message, (error, info) => {
-    if (error) {
-      console.log("Error enviando email");
-      console.log(error.message);
-    } else {
-      console.log("Email enviado");
-    }
+  await new Promise((resolve, reject) => {
+    mailer.sendMail(message, (error, info) => {
+      if (error) {
+        console.log("Error enviando email");
+        console.log(error.message);
+        reject(error);
+      } else {
+        console.log("Email enviado");
+        resolve();
+      }
+    });
   });
 }
 
