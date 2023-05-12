@@ -75,7 +75,7 @@ export async function login(credentials) {
 
   const valid = bcrypt.compareSync(credentials.password, user.password);
   if (!valid) {
-    return { error: "contraseña incorrecta" };
+    return { error: "contrasena incorrecta" };
   }
 
   delete user.password;
