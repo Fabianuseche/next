@@ -19,10 +19,10 @@ export async function forgetPass(correo) {
 
   const token = jwt.sign({ email: correo }, process.env.SECRET);
 
-  const redirectUrl = `${process.env.URL_APP}/reset`;
-  
-  // const redirectUrl = `${process.env.URL_APP}/reset?token=${token}`;
+  const redirectUrl = `${process.env.URL_APP}/reset?token=${token}`;
 
+
+  
   let message = {
     from: "fabianusecherueda@gmail.com",
     to: correo,
@@ -75,11 +75,10 @@ export async function login(credentials) {
 
   const valid = bcrypt.compareSync(credentials.password, user.password);
   if (!valid) {
-    return { error: "contraseña incorrecta" };
+    return { error: "contrasena incorrecta" };
   }
 
   delete user.password;
 
   return { user };
 }
-
