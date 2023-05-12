@@ -22,7 +22,7 @@ function Forget() {
         </h1>
         <form className={styles.form} onSubmit={handleSubmit}>
           <p>Introduce tu correo electrónico para recuperar tu contraseña.</p>
-          <input type="email" placeholder="email" ref={email} required/>
+          <input type="email" placeholder="email" ref={email} />
 
           <button type="submit">Enviar Información</button>
         </form>
