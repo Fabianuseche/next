@@ -8,7 +8,7 @@
     background-color: var(--color-foot);
     display: flex;
     justify-content: space-evenly;
-    margin-top: -10px;
+    
     
 }
 
@@ -21,7 +21,7 @@
     --color-letraHover:black;
  }
  :global(body.tema1) .foot{
-    --color-foot: rgba(3, 243, 23, 0.998);
+    --color-foot: rgba(23, 242, 27, 0.395);
      --color-boton: rgba(9, 255, 5, 0.868);
      --color-hover: rgb(9, 255, 5);
      --color-letrabtn: rgb(255, 255, 255); 
@@ -37,7 +37,7 @@
  }
 
  :global(body.tema3) .foot{
-    --color-foot: rgba(243, 3, 167, 0.621);
+    --color-foot: rgba(252, 0, 235, 0.701);
      --color-boton: rgba(240, 9, 163, 0.977);
      --color-hover: violet;
    
@@ -50,7 +50,7 @@
    
  }
  :global(body.tema5) .foot{
-    --color-foot: rgb(245, 6, 6);
+    --color-foot: rgba(245, 6, 6, 0.658);
      --color-boton: red;
      --color-hover: rgba(245, 6, 6, 0.459);
      --color-letrabtn: black;  
