@@ -4,6 +4,14 @@ import logo2 from "../images/logo2.png";
 import { useAuth } from "./auth";
 import styles from "./header.module.css";
 
+function downloadPDF() {
+  const pdfURL = "/manual/manual.pdf";
+  const link = document.createElement("a");
+  link.href = pdfURL;
+  link.download = "manual.pdf";
+  link.click();
+}
+
 //se crea funcion react que se llama header, la cual de renderiza en las otras rutas
 //para poder manipular la cabecera de la página de forma independiente
 
@@ -16,16 +24,27 @@ function Header() {
         <h2>My AVRYL</h2>
         <Image src={logo2} alt="img" />
       </Link>
+      <div>
+        <button className={styles.btnmanual} onClick={downloadPDF}>
+          Descarga el manual de usuario
+        </button>
+      
+      
+        <a className={styles.btnmanual} href="https://www.youtube.com/" target="_blank">
+         Mira el video de usuario
+          
+        </a>
+        
+      </div>
 
       <div>
         {user ? (
           <>
-            <div >
+            <div>
               {user.firstname} {user.lastname}
             </div>
           </>
         ) : null}
-        
       </div>
     </header>
   );

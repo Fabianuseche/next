@@ -18,6 +18,7 @@ function handleTema(e){
    <option value="tema2" style={{backgroundColor: 'orange', color: 'white'}}>Naranja</option>
    <option value="tema3" style={{backgroundColor: 'pink', color: 'white'}}>Rosado</option>
    <option value="tema4" style={{backgroundColor: 'black', color: 'white'}}>Oscuro</option>
+   <option value="tema5" style={{backgroundColor: 'red', color: 'white'}}>Rojo</option>
     </select>
   )
 }

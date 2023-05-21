@@ -37,6 +37,11 @@
     --colorbackground: rgb(101, 96, 96);
     --coloralias: rgb(255, 255, 255);
 }
+:global(body.tema5) .header {
+    --colora: rgb(0, 0, 0);
+    --colorbackground: rgb(245, 6, 6);
+    --coloralias: rgb(0, 0, 0);
+}
 /* .btnLogout {
     background-color: rgb(9, 240, 25);
     border-radius: 50px;
@@ -79,8 +84,28 @@
     font-size: 20px;
     font-weight: bold;
 }
+.header button{
+    color: var(--coloralias);
+    font-size: 20px;
+    font-weight: bold;
+}
 
-
+.btnmanual {
+   
+    background-color:transparent;
+    border-radius: 30px ;
+    padding: 22px;
+    color: white;
+    font-weight: bold;
+    border: none;
+    font-size: 20px;
+    margin-bottom: 100px;
+    text-decoration: none;
+    margin: 0;
+    margin-top: 5px;
+    padding: 10;
+    
+  }
 
 @media screen and (max-width: 500px) {
     .header {
