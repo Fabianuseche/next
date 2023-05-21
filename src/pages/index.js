@@ -29,7 +29,7 @@ export default function Home() {
           <h1 className={styles.border} >ASISTENTE VIRTUAL</h1>
           <h1 className={styles.wave} >ASISTENTE VIRTUAL</h1>
         </div>
-
+          
         <div className="container">
           <br />
           <br />
@@ -38,10 +38,16 @@ export default function Home() {
 
           {/* en Nextjs los Links y las imagenes también se deben importar para poderlos usar*/}
           <div>
+            
             <Link href="/contenido">
               <Image src={Calendar} alt="calendar" className={styles.slider} />
             </Link>
           </div>
+          {!user && (
+          <Link href="/forget">
+              ¿Olvidaste tu contraseña?
+            </Link>
+             )}
           <div>
             {user && <h1>Bienvenido {user.firstname}</h1>}
             <h1>Gestiona tus eventos, citas, tareas, etc.</h1>
@@ -55,9 +61,11 @@ export default function Home() {
               <Link className={styles.btnindex} href="/register">
                 Registrese
               </Link>
-              <Link className={styles.btnindex}href="/forget">
+              
+              
+              {/* <Link className={styles.btnindex}href="/forget">
               ¿Olvidaste tu contraseña?
-            </Link>
+            </Link> */}
               
             </div>
             

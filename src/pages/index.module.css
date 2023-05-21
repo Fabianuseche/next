@@ -110,7 +110,7 @@
    
     background-color:var(--color-btnindex);
     border-radius: 30px ;
-    padding: 12px;
+    padding: 22px;
     color: white;
     border: none;
     font-size: 20px;
@@ -121,6 +121,7 @@
     padding: 10;
     
   }
+  
   
   .btnindex:hover {
     background-color: var(--color-btnindexhover);

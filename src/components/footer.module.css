@@ -48,7 +48,13 @@
      --color-letrabtn: white;  
    
  }
-
+ :global(body.tema5) .foot{
+    --color-foot: rgb(245, 6, 6);
+     --color-boton: red;
+     --color-hover: rgba(245, 6, 6, 0.459);
+     --color-letrabtn: black;  
+   
+ }
 .btnLogout {
     background-color: var(--color-boton);
     border-radius: 8rem;
