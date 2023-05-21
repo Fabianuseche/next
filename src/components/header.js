@@ -25,16 +25,18 @@ function Header() {
         <Image src={logo2} alt="img" />
       </Link>
       <div>
+      {!user ? (
+          <>
         <button className={styles.btnmanual} onClick={downloadPDF}>
-          Descarga el manual de usuario
+          Manual Uso PDF
         </button>
       
-      
         <a className={styles.btnmanual} href="https://www.youtube.com/" target="_blank">
-         Mira el video de usuario
+         Video Manual Uso
           
         </a>
-        
+        </>
+        ) : null}
       </div>
 
       <div>
