@@ -3,6 +3,7 @@ import db from "@/db";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import nodemailer from "nodemailer";
+import Promise from "promise";
 
 export const config = { rpc: true, wrapMethod };
 
