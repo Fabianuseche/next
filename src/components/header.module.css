@@ -19,7 +19,7 @@
 }
 :global(body.tema1) .header {
     --colora: rgba(0, 0, 0, 0.982);
-    --colorbackground: rgba(23, 242, 27, 0.703);
+    --colorbackground: rgba(23, 242, 27, 0.395);
     --coloralias: rgb(0, 0, 0);
 }
 :global(body.tema2) .header {
@@ -29,7 +29,7 @@
 }
 :global(body.tema3) .header {
     --colora: rgba(2, 0, 0, 0.934);
-    --colorbackground: rgb(252, 0, 235);
+    --colorbackground: rgba(252, 0, 235, 0.701);
     --coloralias: rgba(0, 0, 0, 0.929);   
 }
 :global(body.tema4) .header {
@@ -39,7 +39,7 @@
 }
 :global(body.tema5) .header {
     --colora: rgb(0, 0, 0);
-    --colorbackground: rgb(245, 6, 6);
+    --colorbackground: rgba(245, 6, 6, 0.658);
     --coloralias: rgb(0, 0, 0);
 }
 /* .btnLogout {

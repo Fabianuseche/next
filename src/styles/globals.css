@@ -14,7 +14,7 @@
 }
 
 .tema1{
-  --color-background:rgba(5, 254, 18, 0.326);
+  --color-background:rgba(5, 254, 18, 0.29);
   --color-font-:black;
 }
 .tema2{
@@ -22,7 +22,7 @@
 
 }
 .tema3{
-  --color-background:rgba(254, 5, 229, 0.324);
+  --color-background:rgba(254, 5, 229, 0.231);
   --color-font-:purple;
 }
 
@@ -31,7 +31,7 @@
   --color-font-:white;
 }
 .tema5{
-  --color-background:rgba(255, 0, 0, 0.432);
+  --color-background:rgba(255, 0, 0, 0.354);
   --color-font-:black;
 }
 
