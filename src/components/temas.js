@@ -17,7 +17,7 @@ function Temas() {
 
   return (
     <select className={styles.change} defaultValue="" onChange={handleTema}>
-      <option value="" style={{backgroundColor: 'white', color: 'black'}}>Color</option>
+      <option value="" style={{backgroundColor: 'white', color: 'black'}}>Claro</option>
       <option value="tema0" style={{backgroundColor: 'blue', color: 'white'}}>Azul</option>
       <option value="tema1" style={{backgroundColor: 'lightgreen', color: 'white'}}>Verde</option>
       <option value="tema2" style={{backgroundColor: 'orange', color: 'white'}}>Naranja</option>
