@@ -4,6 +4,9 @@ import logo2 from "../images/logo2.png";
 import { useAuth } from "./auth";
 import styles from "./header.module.css";
 
+import { FaVideo } from 'react-icons/fa';
+import { FaFilePdf } from 'react-icons/fa';
+
 function downloadPDF() {
   const pdfURL = "/manual/manual.pdf";
   const link = document.createElement("a");
@@ -18,8 +21,12 @@ function downloadPDF() {
 function Header() {
   const { user, logout } = useAuth();
 
+  
+
   return (
     <header className={styles.header}>
+      
+
       <Link href="/" className={styles.logo}>
         <h2>AVRYL</h2>
         <Image src={logo2} alt="img" />
@@ -28,13 +35,14 @@ function Header() {
       {!user ? (
           <>
         <button className={styles.btnmanual} onClick={downloadPDF}>
-          Manual Uso PDF
+          <FaFilePdf className={styles.icon} />
+        Manual Uso 
         </button>
-      
-        <a className={styles.btnmanual} href="https://www.youtube.com/" target="_blank">
-         Video Manual Uso
-          
-        </a>
+      -
+      <a className={styles.btnmanual} href="https://www.youtube.com/" target="_blank">
+        <FaVideo className={styles.icon} />
+       Manual Uso 
+      </a>
         </>
         ) : null}
       </div>

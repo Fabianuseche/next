@@ -107,6 +107,18 @@
     padding: 10;
     
   }
+  .icon {
+    margin-right: 15px;
+  }
+
+  @media screen and (max-width: 641px) {
+    .header {
+        justify-content: center;
+        padding-bottom: 10px;
+    }
+
+}
+
 
 @media screen and (max-width: 500px) {
     .header {
