@@ -5,15 +5,23 @@ import Footer from "@/components/footer";
 import Image from "next/image";
 import Calendar from "../images/Calendar.png";
 import { useAuth } from "@/components/auth";
+import React, { useEffect, useState } from 'react';
 
 
 //al estar en la carpeta "pages" se vuelve una ruta dinámica creada por el desarrollador
 //donde se ingresa el contenido de la página
 export default function Home() {
   const { user } = useAuth();
-  
+  const [selectedTema, setSelectedTema] = useState('');
  
- 
+  useEffect(() => {
+    const temaGuardado = localStorage.getItem('tema');
+    if (temaGuardado) {
+      setSelectedTema(temaGuardado);
+      document.body.classList.value = temaGuardado;
+    }
+  }, []);
+
  
   return (
     <>
