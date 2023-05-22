@@ -70,3 +70,21 @@
     color: var(--color-letraHover);
     background-color: var(--color-hover);
 }
+
+
+@media screen and (max-width: 674px) {
+    .foot {
+        
+        height: 50px;
+      
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .foot {
+        
+        height: 50px;
+    }
+
+}
