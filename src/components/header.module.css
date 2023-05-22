@@ -9,6 +9,7 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    height: 75px;
 }
 
 
@@ -75,7 +76,7 @@
 
 
 .logo img {
-    height: 90%;
+    height: 55px;
     width: auto;
 }
 

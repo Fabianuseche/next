@@ -40,6 +40,7 @@
 
 html,
 body {
+  
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   
@@ -50,8 +51,9 @@ body {
 }
 
 .container {
+  
   background-color: var(--color-background);
-  min-height: calc(100vh - 110px);
+  min-height: calc(98vh - 112px);
   display: flex;
   flex-direction: column;
   align-items: center;
