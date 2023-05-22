@@ -84,11 +84,14 @@
     color: var(--coloralias);
     font-size: 20px;
     font-weight: bold;
+    
+    
 }
 .header button{
     color: var(--coloralias);
     font-size: 20px;
     font-weight: bold;
+    
 }
 
 .btnmanual {
@@ -102,21 +105,40 @@
     font-size: 20px;
     margin-bottom: 100px;
     text-decoration: none;
-    margin: 0;
-    margin-top: 5px;
+    margin: 5px;
+    margin-top: -10px;
     padding: 10;
     
+    
+    
   }
+  
+  .btnmanual:hover{
+    font-size: 25px;
+  }
+
   .icon {
-    margin-right: 15px;
+    margin-right: 23px;
   }
 
+  .icon:hover {
+    font-size: 25px;
+    
+  }
+  @media screen and (max-width: 674px) {
+    .header {
+        justify-content: center;
+        padding-bottom: 10px;
+        height: 90px;
+    }
 
+}
 
 @media screen and (max-width: 500px) {
     .header {
         justify-content: center;
-        padding-bottom: 10px;
+        padding-bottom: 8px;
+        height: 90px;
     }
 
 }

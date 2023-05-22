@@ -31,16 +31,16 @@ function Header() {
         <h2>AVRYL</h2>
         <Image src={logo2} alt="img" />
       </Link>
-      <div>
+      <div className={styles.manual}>
       {!user ? (
           <>
         <button className={styles.btnmanual} onClick={downloadPDF}>
-          <FaFilePdf className={styles.icon} />
+          <FaFilePdf className={styles.icon}/>
         Manual Uso 
         </button>
       -
       <a className={styles.btnmanual} href="https://www.youtube.com/" target="_blank">
-        <FaVideo className={styles.icon} />
+        <FaVideo  className={styles.icon} />
        Manual Uso 
       </a>
         </>
