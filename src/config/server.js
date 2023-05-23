@@ -18,7 +18,7 @@ export const wrapMethod = (method) => {
             return result; // Retornar el resultado de la ejecución de "method"
         } catch (error) { // Capturar cualquier error que ocurra durante la ejecución de "method"
             console.error(error); // Imprimir el error en la consola
-            return { error: "hubo un error inesperado" }; // Retornar un objeto con un mensaje de error genérico
+            return { error: "error inesperado" }; // Retornar un objeto con un mensaje de error genérico
         }
     };
 };
