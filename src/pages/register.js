@@ -1,9 +1,9 @@
+import Footer from "@/components/footer";
 import Header from "@/components/header";
 import styles from "@/styles/form.module.css";
 import { useRouter } from "next/router";
 import { useRef } from "react";
 import { register } from "./api/auth";
-import Footer from "@/components/footer";
 
 function RegisterPage() {
   const router = useRouter();
@@ -29,40 +29,43 @@ function RegisterPage() {
     router.push("/login");
   }
 
-      return (
-        <div className="main">
-          <Header />
-          <div className="container">
-            <div className={styles.form}>
-              <input
-                name="firstname"
-                type="text"
+  return (
+    <div className="main">
+      <Header />
+      <div className="container">
+        <div className={styles.form}>
+          <input
+            name="firstname"
+            type="text"
             placeholder="nombres"
             ref={firstnameInput}
+            required
           />
           <input
             name="lastname"
             type="text"
             placeholder="apellidos"
             ref={lastnameInput}
+            required
           />
           <input
             name="email"
             type="email"
             placeholder="correo"
             ref={emailInput}
+            required
           />
           <input
             name="password"
             type="password"
             placeholder="contraseña"
             ref={passwordInput}
+            required
           />
           <button onClick={HandleReg}>Registro</button>
         </div>
-        
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
