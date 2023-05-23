@@ -8,10 +8,10 @@ import { FaVideo } from 'react-icons/fa';
 import { FaFilePdf } from 'react-icons/fa';
 
 function downloadPDF() {
-  const pdfURL = "/manual/manual.pdf";
+  const pdfURL = "/manual/Manual_Avryl.pdf";
   const link = document.createElement("a");
   link.href = pdfURL;
-  link.download = "manual.pdf";
+  link.download = "Manual_Avryl.pdf";
   link.click();
 }
 
