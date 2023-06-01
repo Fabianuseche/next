@@ -6,6 +6,7 @@ import { login } from "@/pages/api/auth"; // Importación de la función de aute
 import styles from "@/styles/form.module.css"; // Importación de estilos CSS desde la ruta "@/styles/form.module.css"
 import { useRouter } from 'next/router'; // Importación del hook useRouter de la librería Next.js para manejar la navegación
 import { useRef } from "react"; // Importación del hook useRef de la librería React para referenciar elementos del DOM
+import Link from "next/link";
 
 // Definición del componente LoginPage
 const LoginPage = () => {
@@ -48,7 +49,11 @@ const LoginPage = () => {
 
           <button onClick={handlesubmit}>Iniciar Sesión</button> {/* Renderización del botón de inicio de sesión con el evento onClick que llama a la función handlesubmit */}
         </div>
-        
+        <br/>
+          <Link href="/forget" >
+              ¿Olvidaste tu contraseña?
+            </Link>
+             
       </div>
       <Footer/>
     </div>

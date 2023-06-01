@@ -1,7 +1,7 @@
 
 :root {
   --color-font-:rgb(0, 0, 0);
-  --color-fontb-:rgb(255, 255, 255);
+  
   --color-background:rgba(255, 255, 255, 0);
   --color-btnindex:black;
   --color-btnindexhover: white;
@@ -39,7 +39,7 @@
 .tema6 {
 
   --color-background: url("/bumblebee.jpg");
-  --color-fontb: rgb(255, 255, 255);
+  --color-font-: rgb(255, 255, 255);
   
 }
 
@@ -75,10 +75,10 @@ body {
   
 }
 
-.container h1{
+.container h1, h3{
   font-family: 'Charm', cursive;
   color: var(--color-font-);
-  color: var(--color-fontb-);  
+  
 }
 
 .links {
