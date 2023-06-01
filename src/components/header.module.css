@@ -14,7 +14,7 @@
 
 
 :global(body.tema0) .header {
-    --colorbackground: rgba(23, 242, 235, 0.703);
+    --colorbackground: rgba(23, 242, 235, 0.516);
     --colora: rgba(0, 0, 255, 0.591);
     --coloralias: rgb(0, 0, 255);
 }
@@ -30,7 +30,7 @@
 }
 :global(body.tema3) .header {
     --colora: rgba(2, 0, 0, 0.934);
-    --colorbackground: rgba(252, 0, 235, 0.701);
+    --colorbackground: rgba(252, 0, 235, 0.356);
     --coloralias: rgba(0, 0, 0, 0.929);   
 }
 :global(body.tema4) .header {
@@ -41,6 +41,11 @@
 :global(body.tema5) .header {
     --colora: rgb(0, 0, 0);
     --colorbackground: rgba(245, 6, 6, 0.658);
+    --coloralias: rgb(0, 0, 0);
+}
+:global(body.tema6) .header {
+    --colora: rgb(0, 0, 0);
+    --colorbackground: rgba(239, 160, 14, 0.902);
     --coloralias: rgb(0, 0, 0);
 }
 /* .btnLogout {
