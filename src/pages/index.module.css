@@ -170,5 +170,11 @@
     .titulo h1 {
         font-size: 2rem;
         flex-direction: column;
+    }   
+    .slider{
+        width: 100px;
+        height: 100px;
+        display: flex;
+        margin: 10px;
     }
 }
