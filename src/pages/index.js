@@ -50,12 +50,13 @@ export default function Home() {
             <Link href="/contenido">
               <Image src={Calendar} alt="calendar" className={styles.slider} />
             </Link>
+            {user && (
+          
+          <h3>Click ↑ para empezar </h3>
+        
+         )}
           </div>
-          {!user && (
-          <Link href="/forget">
-              ¿Olvidaste tu contraseña?
-            </Link>
-             )}
+          
           <div>
             {user && <h1>Bienvenido {user.firstname}</h1>}
             <h1>Gestiona tus eventos, citas, tareas, etc.</h1>
