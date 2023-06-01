@@ -22,7 +22,7 @@
   --color-botonhoverletra:rgb(0, 0, 0);
 }
 :global(body.tema1) .form {
-  --color-forminput :rgb(60, 255, 0);
+  --color-forminput :rgba(60, 255, 0, 0.55);
   --color-formboton: rgb(89, 244, 11);
   --color-formbotonletra:rgb(0, 0, 0);
   --color-botonhover:rgba(91, 247, 0, 0.502);
@@ -37,9 +37,9 @@
 }
 :global(body.tema3) .form {
   --color-forminput :rgb(244, 11, 244);
-  --color-formboton: rgb(244, 11, 170);
+  --color-formboton: rgba(244, 11, 170, 0.55);
   --color-formbotonletra:rgb(0, 0, 0);
-  --color-botonhover:rgba(244, 11, 170, 0.486);
+  --color-botonhover:rgba(244, 11, 170, 0.404);
   --color-botonhoverletra:rgb(0, 0, 0);
 }
 :global(body.tema4) .form {
@@ -47,6 +47,14 @@
   --color-formboton: rgb(0, 0, 0);
   --color-formbotonletra:rgb(255, 255, 255);
   --color-botonhover:white;
+  --color-botonhoverletra:rgb(0, 0, 0);
+}
+
+:global(body.tema6) .form {
+  --color-forminput :rgb(0, 0, 0);
+  --color-formboton: rgb(0, 0, 0);
+  --color-formbotonletra:rgb(255, 255, 255);
+  --color-botonhover:rgba(239, 160, 14, 0.902);
   --color-botonhoverletra:rgb(0, 0, 0);
 }
 .form input{

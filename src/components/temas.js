@@ -24,6 +24,7 @@ function Temas() {
       <option value="tema3" style={{backgroundColor: 'pink', color: 'white'}}>Rosado</option>
       <option value="tema4" style={{backgroundColor: 'black', color: 'white'}}>Oscuro</option>
       <option value="tema5" style={{backgroundColor: 'red', color: 'white'}}>Rojo</option>
+      <option value="tema6" style={{backgroundColor: 'yellow', color: 'black'}}>Bumblebee</option>
     </select>
   )
 }

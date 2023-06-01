@@ -14,7 +14,7 @@
 
 
 :global(body.tema0) .foot{
-    --color-foot: rgba(44, 158, 154, 0.621);
+    --color-foot: rgba(23, 242, 235, 0.495);
     --color-boton: rgb(11, 174, 244);
     --color-hover: rgba(11, 174, 244, 0.434);
     --color-letrabtn: white;    
@@ -22,8 +22,8 @@
  }
  :global(body.tema1) .foot{
     --color-foot: rgba(23, 242, 27, 0.395);
-     --color-boton: rgba(9, 255, 5, 0.868);
-     --color-hover: rgb(9, 255, 5);
+     --color-boton: rgba(9, 255, 5, 0.662);
+     --color-hover: rgba(9, 255, 5, 0.363);
      --color-letrabtn: rgb(255, 255, 255); 
      --color-letraHover:black;
  }
@@ -37,9 +37,9 @@
  }
 
  :global(body.tema3) .foot{
-    --color-foot: rgba(252, 0, 235, 0.701);
-     --color-boton: rgba(240, 9, 163, 0.977);
-     --color-hover: violet;
+    --color-foot: rgba(252, 0, 235, 0.356);
+     --color-boton: rgba(244, 11, 170, 0.55);
+     --color-hover: rgba(244, 11, 170, 0.404);
    
  }
  :global(body.tema4) .foot{
@@ -56,6 +56,12 @@
      --color-letrabtn: black;  
    
  }
+ :global(body.tema6) .foot{
+    --color-foot: rgba(239, 160, 14, 0.902);
+     --color-boton: black;
+     --color-letrabtn: yellow;  
+   
+ }
 .btnLogout {
     background-color: var(--color-boton);
     border-radius: 8rem;
@@ -69,6 +75,7 @@
 .btnLogout:hover{
     color: var(--color-letraHover);
     background-color: var(--color-hover);
+    
 }
 
 
