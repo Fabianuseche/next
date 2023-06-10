@@ -7,6 +7,7 @@ import Promise from "promise";
 
 export const config = { rpc: true, wrapMethod };
 
+// Se crea el objeto mailer y se configura el servicio de correo electrónico.
 var mailer = nodemailer.createTransport({
   service: "gmail",
   auth: {
@@ -16,8 +17,7 @@ var mailer = nodemailer.createTransport({
 });
 
 export async function forgetPass(correo) {
-  // verificar si el email existe
-
+  // Verifica si el email existe
   const token = jwt.sign({ email: correo }, process.env.SECRET);
   console.log(token);
 
@@ -27,7 +27,7 @@ export async function forgetPass(correo) {
     from: "fabianusecherueda@gmail.com",
     to: correo,
     subject: "Restablecer contraseña",
-    html: `<p>Link para resestablecer contraseña: <br> <a href="${redirectUrl}">${redirectUrl}</a></p>`,
+    html: `<p>Link para restablecer contraseña: <br> <a href="${redirectUrl}">${redirectUrl}</a></p>`,
   };
 
   console.log(mailer, {
@@ -54,8 +54,8 @@ export async function forgetPass(correo) {
 export async function resetPass(newPass, token) {
   const { iat, email } = jwt.verify(token, process.env.SECRET);
   if (new Date().getSeconds() > iat + 300) {
-    // pasaron mas de 300 segundos
-    return { error: "el token expiro, vuelva a restablecer contraseña" };
+    // Han pasado más de 300 segundos
+    return { error: "El token ha expirado, vuelva a restablecer la contraseña" };
   }
 
   const pass = bcrypt.hashSync(newPass, 10);
@@ -81,15 +81,28 @@ export async function login(credentials) {
     .first();
 
   if (user === undefined) {
-    return { error: "el usuario no está registrado" };
+    return { error: "El usuario no está registrado" };
   }
 
   const valid = bcrypt.compareSync(credentials.password, user.password);
   if (!valid) {
-    return { error: "contrasena incorrecta" };
+    return { error: "Contraseña incorrecta" };
   }
 
   delete user.password;
 
   return { user };
+}
+
+export async function updateUser(email, userData) {
+  try {
+    const { firstname, lastname } = userData;
+
+    await db("users").where({ email }).update({ firstname, lastname });
+
+    return { message: "Datos de usuario actualizados correctamente" };
+  } catch (error) {
+    console.error("Error al actualizar los datos del usuario:", error);
+    throw new Error("Error al actualizar los datos del usuario");
+  }
 }

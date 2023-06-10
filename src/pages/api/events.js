@@ -11,7 +11,12 @@ export async function createEvent(data) {
 export async function deleteEvent(id) {
   await db.from("events").where("id", id).del();
 }
+//************************************************************** */
+export async function updateEvent(id, data) {
+  await db.from("events").where("id", id).update(data);
+}
 
+//***************************************************************** */
 export async function listEvent(user_id) {
   const events = await db
     .from("events")

@@ -5,17 +5,19 @@ import Header from "@/components/header";
 import dayjs from "dayjs";
 import { useEffect, useRef, useState } from "react";
 /*import formstyles from "../styles/form.module.css";*/
-import { createEvent, deleteEvent, listEvent } from "./api/events";
+import Temas from "@/components/temas.js";
+import { createEvent, deleteEvent, listEvent, updateEvent } from "./api/events";
 import styles from "./contenido.module.css";
-import Temas from "@/components/temas.js"
 
 
 
 function Contenido() {
   const [events, setEvents] = useState([]);
   const { user } = useAuth();
-
- 
+//****************************** */
+  const [showUpdateForm, setShowUpdateForm] = useState(false);
+  const [updatedEvent, setUpdatedEvent] = useState(null);
+//***************************************************/
  
 
   const nombre = useRef();
@@ -43,6 +45,34 @@ const remove = async (id) => { // Definir una función asíncrona llamada 'remov
   loadEvents(user.id); // Llamar a la función 'loadEvents' con el 'id' del usuario como argumento
 };
 
+//**************************************************************************** */
+const update = async (id) => {
+  const eventToUpdate = events.find((event) => event.id === id);
+  setShowUpdateForm(true);
+  setUpdatedEvent(eventToUpdate);
+};
+
+const handleUpdateSubmit = async (event) => {
+  event.preventDefault();
+
+  const { newName, newDate, newLugar, newHora } = updatedEvent;
+
+  const updatedData = {
+    name: newName,
+    date: newDate,
+    lugar: newLugar,
+    hora: newHora,
+  };
+console.log(updatedData,updatedEvent.id, updatedData)
+  await updateEvent(updatedEvent.id, updatedData);
+
+  loadEvents(user.id);
+
+  setShowUpdateForm(false);
+  setUpdatedEvent(null);
+};
+
+//****************************************************************************/
   async function addEvent(e) {
     e.preventDefault();
 
@@ -68,9 +98,8 @@ const remove = async (id) => { // Definir una función asíncrona llamada 'remov
       <Header />
 
       <div className={`main container`}>
-        <Temas/>
-     
-        <div >
+        <Temas />
+        <div>
           <form onSubmit={addEvent} className={styles.form}>
             <input
               type="text"
@@ -88,14 +117,14 @@ const remove = async (id) => { // Definir una función asíncrona llamada 'remov
               type="date"
               ref={fecha}
               required
-              placeholder="fecha del Evento"
+              placeholder="Fecha del Evento"
               min={dayjs().format("YYYY-MM-DD")}
             />
             <input
               type="time"
               ref={hora}
               required
-              placeholder="hora del Evento"
+              placeholder="Hora del Evento"
             />
             <button type="submit">Añadir evento</button>
           </form>
@@ -104,16 +133,75 @@ const remove = async (id) => { // Definir una función asíncrona llamada 'remov
         <div className={styles.eventos}>
           {events.map((event) => (
             <Event
+              id={event.id}
               date={event.date}
               name={event.name}
               lugar={event.lugar}
               hora={event.hora}
               key={event.id}
               remove={() => remove(event.id)}
+              update={()=> loadEvents(user.id)}
             />
           ))}
         </div>
-        
+
+        {showUpdateForm && updatedEvent && (
+          <div className={styles.updateForm}>
+            
+            <form onSubmit={handleUpdateSubmit}>
+              <input
+                type="text"
+                value={updatedEvent.name}
+                onChange={(e) =>
+                  setUpdatedEvent({
+                    ...updatedEvent,
+                    name: e.target.value,
+                  })
+                }
+                required
+                placeholder="Nombre del Evento"
+              />
+              <input
+                type="text"
+                value={updatedEvent.lugar}
+                onChange={(e) =>
+                  setUpdatedEvent({
+                    ...updatedEvent,
+                    lugar: e.target.value,
+                  })
+                }
+                required
+                placeholder="Lugar del Evento"
+              />
+              <input
+                type="date"
+                value={updatedEvent.date}
+                onChange={(e) =>
+                  setUpdatedEvent({
+                    ...updatedEvent,
+                    date: e.target.value,
+                  })
+                }
+                required
+                placeholder="Fecha del Evento"
+                min={dayjs().format("YYYY-MM-DD")}
+              />
+              <input
+                type="time"
+                value={updatedEvent.hora}
+                onChange={(e) =>
+                  setUpdatedEvent({
+                    ...updatedEvent,
+                    hora: e.target.value,
+                  })
+                }
+                required
+                placeholder="Hora del Evento"
+              />
+              <button type="submit">Guardar cambios</button>
+            </form>
+          </div>
+        )}
       </div>
       <Footer />
     </div>
