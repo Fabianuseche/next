@@ -50,11 +50,11 @@ export default function Home() {
             <Link href="/contenido">
               <Image src={Calendar} alt="calendar" className={styles.slider} />
             </Link>
-            {user && (
+            {/* {user && (
           
           <h3>Click ↑ para empezar </h3>
         
-         )}
+         )} */}
           </div>
           
           <div>

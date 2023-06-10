@@ -31,6 +31,13 @@ function RegisterPage() {
       return;
     }
 
+    // Validar contraseña alfanumérica y de al menos 4 caracteres
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,}$/;
+    if (!passwordRegex.test(password)) {
+      alert("La contraseña debe ser alfanumérica y tener al menos 4 caracteres.");
+      return;
+    }
+
     const datos = {
       firstname,
       lastname,
@@ -54,28 +61,28 @@ function RegisterPage() {
           <input
             name="firstname"
             type="text"
-            placeholder="nombres"
+            placeholder="Nombres"
             ref={firstnameInput}
             required
           />
           <input
             name="lastname"
             type="text"
-            placeholder="apellidos"
+            placeholder="Apellidos"
             ref={lastnameInput}
             required
           />
           <input
             name="email"
             type="email"
-            placeholder="correo"
+            placeholder="Correo"
             ref={emailInput}
             required
           />
           <input
             name="password"
             type="password"
-            placeholder="contraseña"
+            placeholder="Contraseña"
             ref={passwordInput}
             required
           />

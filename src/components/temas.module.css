@@ -2,18 +2,54 @@
 
 .change{
     --color-botontema:rgb(9, 0, 0);
+    --color-backgroud:transparent;
 
     color: var(--color-botontema);
-    position: absolute ;
-    top: 0;
-    right: 0;
-    height: 30px;
-    width: 80px;
-    border-radius: 20px;
-    background-color: transparent;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: var(--color-backgroud);
     font-weight: bold;
+    
   }
+  :global(body.tema0) .change {
+    --color-botontema:rgb(0, 0, 0);
+    --color-backgroud:rgba(23, 242, 235, 0.516);
+  }
+
+:global(body.tema1) .change {
+  --color-botontema:rgb(0, 0, 0);
+  --color-backgroud: rgba(23, 242, 27, 0.395);
+  
+}
+:global(body.tema2) .change {
+  --color-botontema:rgb(0, 0, 0);
+  --color-backgroud: rgba(254, 102, 0, 0.664);
+}
+:global(body.tema3) .change {
+  --color-botontema:rgb(0, 0, 0);
+  --color-backgroud: rgba(252, 0, 235, 0.356);
+}
   :global(body.tema4) .change {
     --color-botontema:rgb(255, 255, 255);
-    
+    --color-backgroud: rgb(101, 96, 96);
 }
+:global(body.tema5) .change {
+  --color-botontema:rgb(0, 0, 0);
+  --color-backgroud: rgba(245, 6, 6, 0.658);
+}
+:global(body.tema6) .change {
+  --color-botontema:rgb(0, 0, 0);
+  --color-backgroud: rgba(239, 160, 14, 0.902);
+}
+
+.preview {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
