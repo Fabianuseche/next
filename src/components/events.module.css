@@ -7,6 +7,7 @@
   color: white;
   border-radius: 5px;
   margin-left: 10px;
+  
 }
 /* estilos de la caja evento */
 .event {
@@ -94,11 +95,33 @@
     margin-right: 0;
   }
 
-  
 }
-@media screen and (max-width: 400px) {
+
+@media screen and (max-width: 480px) {
   .event {
     font-size: 10px;
+  }
+
+  .event .buttonContainer {
+    display: flex;
+    
+    margin: -30px;
+    
+  }
+
+  .event button {
+    border: none;
+    background-color: red;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+    margin-left: 10px; 
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .event {
+    font-size: 9px;
   }
  
  
