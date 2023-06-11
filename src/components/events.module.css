@@ -41,17 +41,25 @@
 
 .event .eventname {
   padding: 10px;
+  border: solid 1px black;
+  border-radius: 10px;
 }
 .event .eventdate {
   padding: 10px;
+  border: solid 1px black;
+  border-radius: 10px;
 }
 
 .event .eventlugar {
   padding: 10px;
+  border: solid 1px black;
+  border-radius: 10px;
 }
 
 .event .eventhora {
   padding: 10px;
+  border: solid 1px black;
+  border-radius: 10px;
 }
 .event .actions {
   padding: 10px;
@@ -63,19 +71,45 @@
     text-align: center;
 
   }
+
+ 
 }
 @media screen and (max-width: 700px) {
   .event > div {
     width: 33%;
   }
+
+ 
+}
+@media screen and (max-width: 600px) {
+  .event {
+    font-size: 20px;
+  }
+  .event button {
+    
+    margin: 5px;
+  }
+  .event input {
+    font-size: 12px; 
+    width: 100%; 
+    box-sizing: border-box; 
+    padding: 4px; 
+    border-radius: 10px;
+  }
+
+  
 }
 @media screen and (max-width: 400px) {
   .event {
     font-size: 10px;
   }
+ 
+ 
 }
 @media screen and (max-width: 300px) {
   .event {
     font-size: 7px;
   }
+
+  
 }
