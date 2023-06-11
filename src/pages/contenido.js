@@ -14,9 +14,15 @@ import styles from "./contenido.module.css";
 function Contenido() {
   const [events, setEvents] = useState([]);
   const { user } = useAuth();
-//****************************** */
+
   const [showUpdateForm, setShowUpdateForm] = useState(false);
   const [updatedEvent, setUpdatedEvent] = useState(null);
+  //****************************** */
+  const [showForm, setShowForm] = useState(false);
+
+  const toggleForm = () => {
+  setShowForm(!showForm);
+};
 //***************************************************/
  
 
@@ -94,12 +100,14 @@ console.log(updatedData,updatedEvent.id, updatedData)
   }
 
   return (
+    <>
     <div>
       <Header />
 
       <div className={`main container`}>
         <Temas />
         <div>
+      
           <form onSubmit={addEvent} className={styles.form}>
             <input
               type="text"
@@ -205,6 +213,7 @@ console.log(updatedData,updatedEvent.id, updatedData)
       </div>
       <Footer />
     </div>
+    </>
   );
 }
 
