@@ -1,9 +1,7 @@
 import styles from "./temas.module.css";
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 
 function Temas() {
-  const selectRef = useRef(null);
-
   useEffect(() => {
     const temaGuardado = localStorage.getItem('tema');
     if (temaGuardado) {
@@ -17,31 +15,20 @@ function Temas() {
     localStorage.setItem('tema', temaSeleccionado);
   }
 
-  function openOptions() {
-    selectRef.current.click();
-  }
-
   return (
-    <div className={styles.container}>
-      <div className={styles.selectBox} onClick={openOptions}>
-        <span className={styles.selectedOption}/>
-        <select
-          ref={selectRef}
-          className={styles.change}
-          defaultValue=""
-          onChange={handleTema}
-        >
-          <option value="tema0" style={{backgroundColor: 'blue', color: 'white'}}>Blue</option>
-          <option value="tema1" style={{backgroundColor: 'lightgreen', color: 'white'}}>Light Green</option>
-          <option value="tema2" style={{backgroundColor: 'orange', color: 'white'}}>Orange</option>
-          <option value="tema3" style={{backgroundColor: 'pink', color: 'white'}}>Pink</option>
-          <option value="tema4" style={{backgroundColor: 'black', color: 'white'}}>Black</option>
-          <option value="tema5" style={{backgroundColor: 'red', color: 'white'}}>Red</option>
-          <option value="tema6" style={{backgroundColor: 'yellow', color: 'black'}}>Yellow</option>
-        </select>
-      </div>
-    </div>
-  );
+    <select className={styles.change} defaultValue="" onChange={handleTema}>
+      <option value="" style={{backgroundColor: 'white', color: 'black'}}>Tema</option>
+      <option value="tema0" style={{backgroundColor: 'blue', color: 'white'}}>Azul</option>
+      <option value="tema1" style={{backgroundColor: 'lightgreen', color: 'white'}}>Verde</option>
+      <option value="tema2" style={{backgroundColor: 'orange', color: 'white'}}>Naranja</option>
+      <option value="tema3" style={{backgroundColor: 'pink', color: 'white'}}>Rosado</option>
+      <option value="tema4" style={{backgroundColor: 'black', color: 'white'}}>Oscuro</option>
+      <option value="tema5" style={{backgroundColor: 'red', color: 'white'}}>Rojo</option>
+      <option value="tema6" style={{backgroundColor: 'yellow', color: 'black'}}>Amarillo</option>
+      {/* Opción adicional para mostrar el color seleccionado */}
+      <option value="" disabled hidden style={{display: 'none'}}/>
+    </select>
+  )
 }
 
 export default Temas;

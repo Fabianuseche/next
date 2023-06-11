@@ -41,25 +41,21 @@
 
 .event .eventname {
   padding: 10px;
-  border: solid 1px black;
-  border-radius: 10px;
+  
 }
 .event .eventdate {
   padding: 10px;
-  border: solid 1px black;
-  border-radius: 10px;
+  
 }
 
 .event .eventlugar {
   padding: 10px;
-  border: solid 1px black;
-  border-radius: 10px;
+  
 }
 
 .event .eventhora {
   padding: 10px;
-  border: solid 1px black;
-  border-radius: 10px;
+  
 }
 .event .actions {
   padding: 10px;
