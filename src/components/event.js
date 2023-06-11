@@ -99,15 +99,15 @@ const Event = ({ id, name, date, lugar, hora, remove, update }) => {
       {expiringSoon} {/* Mostrar mensaje adicional */}
       <div className={styles.actions}>
         <button onClick={remove} className="delete">
-          Eliminar
+          Borrar
         </button>
         {
           updating ?
             <button onClick={handleUpdateEvent} className="update">
-              Guardar
+              Editar
             </button> 
             : <button onClick={() => setUpdating(true)} className="update">
-              Modificar
+              Editar
             </button>
         }
       </div>

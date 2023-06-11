@@ -1,5 +1,5 @@
-import styles from "./temas.module.css";
-import React, { useEffect } from 'react';
+import styles from "./temas.module.css"
+import React, { useEffect } from 'react'
 
 function Temas() {
   useEffect(() => {
@@ -25,10 +25,8 @@ function Temas() {
       <option value="tema4" style={{backgroundColor: 'black', color: 'white'}}>Oscuro</option>
       <option value="tema5" style={{backgroundColor: 'red', color: 'white'}}>Rojo</option>
       <option value="tema6" style={{backgroundColor: 'yellow', color: 'black'}}>Amarillo</option>
-      {/* Opción adicional para mostrar el color seleccionado */}
-      <option value="" disabled hidden style={{display: 'none'}}/>
     </select>
   )
 }
 
-export default Temas;
+export default Temas
