@@ -4,6 +4,7 @@ import customParseFormat from "dayjs/plugin/customParseFormat"; // Importar el p
 import { useRef, useState } from "react";
 import styles from "./events.module.css"; // Importar los estilos CSS para el componente
 
+
 dayjs.extend(customParseFormat); // Extender dayjs con el plugin customParseFormat
 
 const Event = ({ id, name, date, lugar, hora, remove, update }) => {
@@ -98,19 +99,22 @@ const Event = ({ id, name, date, lugar, hora, remove, update }) => {
       </div>
       {expiringSoon} {/* Mostrar mensaje adicional */}
       <div className={styles.actions}>
-        <button onClick={remove} className="delete">
-          Borrar
+  <div className={styles.buttonContainer}>
+    <button onClick={remove}>
+      Borrar
+    </button>
+    {
+      updating ?
+        <button onClick={handleUpdateEvent} className="update">
+          Guardar
+        </button> 
+        : <button onClick={() => setUpdating(true)}>
+          Editar
         </button>
-        {
-          updating ?
-            <button onClick={handleUpdateEvent} className="update">
-              Editar
-            </button> 
-            : <button onClick={() => setUpdating(true)} className="update">
-              Editar
-            </button>
-        }
-      </div>
+    }
+  </div>
+</div>
+
     </div>
   );
 };
