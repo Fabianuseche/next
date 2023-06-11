@@ -24,7 +24,7 @@ function Temas() {
   return (
     <div className={styles.container}>
       <div className={styles.selectBox} onClick={openOptions}>
-        <span className={styles.selectedOption}>Tema</span>
+        <span className={styles.selectedOption}/>
         <select
           ref={selectRef}
           className={styles.change}
