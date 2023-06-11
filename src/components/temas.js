@@ -23,69 +23,62 @@ function Temas() {
       <button
         className={styles.temaButton}
         value=""
-        style={{ backgroundColor: 'white', color: 'black' }}
+        style={{ backgroundColor: 'transparent', color: 'black' }}
         onClick={handleTema}
       >
-        Tema 1
+        Color
       </button>
       {mostrarTemas && (
         <>
           <button
             className={styles.temaButton}
             value="tema0"
-            style={{ backgroundColor: 'blue', color: 'white' }}
+            style={{ backgroundColor: 'rgba(23, 242, 235, 0.516', color: 'white' }}
             onClick={handleTema}
-          >
-            Tema 2
-          </button>
+          />
+            
           <button
             className={styles.temaButton}
             value="tema1"
             style={{ backgroundColor: 'lightgreen', color: 'white' }}
             onClick={handleTema}
-          >
-            Tema 3
-          </button>
+          />
+           
           <button
             className={styles.temaButton}
             value="tema2"
             style={{ backgroundColor: 'orange', color: 'white' }}
             onClick={handleTema}
-          >
-            Tema 4
-          </button>
+          />
+            
           <button
             className={styles.temaButton}
             value="tema3"
-            style={{ backgroundColor: 'pink', color: 'white' }}
+            style={{ backgroundColor: 'rgba(252, 0, 235, 0.356)', color: 'white' }}
             onClick={handleTema}
-          >
-            Tema 5
-          </button>
+          />
+            
           <button
             className={styles.temaButton}
             value="tema4"
             style={{ backgroundColor: 'black', color: 'white' }}
             onClick={handleTema}
-          >
-            Tema 6
-          </button>
+          />
+            
           <button
             className={styles.temaButton}
             value="tema5"
             style={{ backgroundColor: 'red', color: 'white' }}
             onClick={handleTema}
-          >
-            Tema 7
-          </button>
+          />
+            
           <button
             className={styles.temaButton}
             value="tema6"
             style={{ backgroundColor: 'yellow', color: 'black' }}
             onClick={handleTema}
-          >
-            Tema 8
-          </button>
+          />
+            
         </>
       )}
     </div>
