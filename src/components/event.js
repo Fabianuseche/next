@@ -97,7 +97,7 @@ const Event = ({ id, name, date, lugar, hora, remove, update }) => {
         /> : dayjs(hora, "HH:mm:ss").format("hh:mm a")}
 
       </div>
-      {expiringSoon} {/* Mostrar mensaje adicional */}
+      
       <div className={styles.actions}>
   <div className={styles.buttonContainer}>
     <button onClick={remove}>
@@ -112,11 +112,15 @@ const Event = ({ id, name, date, lugar, hora, remove, update }) => {
           Editar
         </button>
     }
+    
   </div>
+  
 </div>
-
+{expiringSoon}
     </div>
+    
   );
+  
 };
 
 function datediff(d) {
