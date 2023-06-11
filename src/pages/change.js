@@ -1,6 +1,6 @@
 import Footer from "@/components/footer";
 import Header from "@/components/header";
-import { useState } from "react";
+import { useState, } from "react";
 import { useAuth } from "../components/auth";
 import { updateUser } from "./api/auth";
 
@@ -67,9 +67,23 @@ function Change() {
                   </form>
                 ) : (
                   <>
-                    {user.firstname} {user.lastname}
-                    <button onClick={() => setEditMode(true)}>Editar</button>
-                  </>
+  {user.firstname} {user.lastname}
+  <button
+    onClick={() => setEditMode(true)}
+    style={{
+      padding: "10px 20px",
+      backgroundColor: "transparent ",
+      color: "black",
+      border: "solid",
+      borderRadius: "5px",
+      cursor: "pointer",
+      marginLeft: "30px",
+      
+    }}
+  >
+    Editar
+  </button>
+</>
                 )}
               </div>
             </>
