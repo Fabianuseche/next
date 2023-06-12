@@ -1,10 +1,8 @@
 import Footer from "@/components/footer";
 import Header from "@/components/header";
-import { useState, } from "react";
+import { useState, useEffect } from "react";
 import { useAuth } from "../components/auth";
 import { updateUser } from "./api/auth";
-
-
 
 function Change() {
   const { user, logout, login } = useAuth();
@@ -13,6 +11,15 @@ function Change() {
     firstname: user?.firstname || "",
     lastname: user?.lastname || "",
   });
+
+  useEffect(() => {
+    const firstname = localStorage.getItem("firstname");
+    const lastname = localStorage.getItem("lastname");
+
+    if (firstname && lastname) {
+      setFormData({ firstname, lastname });
+    }
+  }, []);
 
   const handleInputChange = (e) => {
     setFormData({
@@ -23,12 +30,16 @@ function Change() {
 
   const updateUserData = async () => {
     try {
-      user.firstname = formData.firstname
-      user.lastname = formData.lastname
-      login(user)
-      updateUser(user.email, formData)
+      user.firstname = formData.firstname;
+      user.lastname = formData.lastname;
+      login(user);
+      updateUser(user.email, formData);
+
+      // Guardar los datos en el localStorage
+      localStorage.setItem("firstname", formData.firstname);
+      localStorage.setItem("lastname", formData.lastname);
     } catch (error) {
-      console.error('Error al actualizar los datos:', error);
+      console.error("Error al actualizar los datos:", error);
     }
   };
 
@@ -37,6 +48,19 @@ function Change() {
     updateUserData();
     setEditMode(false);
   };
+
+  useEffect(() => {
+    const temaGuardado = localStorage.getItem("tema");
+    const fondoGuardado = localStorage.getItem("fondo");
+
+    if (temaGuardado) {
+      document.body.classList.value = temaGuardado;
+    }
+
+    if (fondoGuardado) {
+      document.body.style.backgroundImage = `url(${fondoGuardado})`;
+    }
+  }, []);
 
   return (
     <div className="main">
@@ -67,23 +91,22 @@ function Change() {
                   </form>
                 ) : (
                   <>
-  {user.firstname} {user.lastname}
-  <button
-    onClick={() => setEditMode(true)}
-    style={{
-      padding: "10px 20px",
-      backgroundColor: "transparent ",
-      color: "black",
-      border: "solid",
-      borderRadius: "5px",
-      cursor: "pointer",
-      marginLeft: "30px",
-      
-    }}
-  >
-    Editar
-  </button>
-</>
+                    {user.firstname} {user.lastname}
+                    <button
+                      onClick={() => setEditMode(true)}
+                      style={{
+                        padding: "10px 20px",
+                        backgroundColor: "transparent",
+                        color: "black",
+                        border: "solid",
+                        borderRadius: "5px",
+                        cursor: "pointer",
+                        marginLeft: "30px",
+                      }}
+                    >
+                      Editar
+                    </button>
+                  </>
                 )}
               </div>
             </>
@@ -96,3 +119,4 @@ function Change() {
 }
 
 export default Change;
+  
