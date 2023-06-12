@@ -57,11 +57,17 @@ body {
   box-sizing: border-box;
 }
 
+body{
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .container {
   
   background: var(--color-background);
   background-position: center 10%;
-  background-size: cover;
+  background-size: contain;
   
   min-height: calc(98vh - 112px);
   display: flex;
