@@ -13,12 +13,20 @@ import React, { useEffect, useState } from 'react';
 export default function Home() {
   const { user } = useAuth();
   const [selectedTema, setSelectedTema] = useState('');
+  const [selectedFondo, setSelectedFondo] = useState('');
  
   useEffect(() => {
     const temaGuardado = localStorage.getItem('tema');
+    const fondoGuardado = localStorage.getItem('fondo');
+  
     if (temaGuardado) {
       setSelectedTema(temaGuardado);
       document.body.classList.value = temaGuardado;
+    }
+  
+    if (fondoGuardado) {
+      setSelectedFondo(fondoGuardado);
+      document.body.style.backgroundImage = `url(${fondoGuardado})`;
     }
   }, []);
 
@@ -48,7 +56,12 @@ export default function Home() {
           <div>
             
             <Link href="/contenido">
-              <Image src={Calendar} alt="calendar" className={styles.slider} />
+            <Image
+                src={Calendar}
+                alt="calendar"
+                className={styles.slider}
+                style={{ backgroundImage: selectedFondo ? `url(${selectedFondo})` : 'none' }}
+/>
             </Link>
             {/* {user && (
           
