@@ -22,16 +22,16 @@
  }
  :global(body.tema1) .foot{
     --color-foot: rgba(23, 242, 27, 0.395);
-     --color-boton: rgba(9, 255, 5, 0.662);
+     --color-boton: rgba(9, 255, 5, 0.794);
      --color-hover: rgba(9, 255, 5, 0.363);
-     --color-letrabtn: rgb(255, 255, 255); 
+     --color-letrabtn: black; 
      --color-letraHover:black;
  }
  :global(body.tema2) .foot{
-    --color-foot: rgba(239, 158, 8, 0.662);
+    --color-foot: rgba(239, 158, 8, 0.819);
     --color-boton: rgb(255, 80, 5);
-    --color-hover: rgb(255, 255, 5);
-    --color-letrabtn: rgb(255, 255, 255); 
+    --color-hover: rgba(255, 80, 5, 0.463);
+    --color-letrabtn: black; 
     --color-letraHover:black;
    
  }
@@ -40,14 +40,16 @@
     --color-foot: rgba(252, 0, 235, 0.356);
      --color-boton: rgba(244, 11, 170, 0.55);
      --color-hover: rgba(244, 11, 170, 0.404);
+     --color-letrabtn: black; 
+     --color-letraHover:black;
    
  }
  :global(body.tema4) .foot{
     --color-foot: rgb(60, 58, 58);
      --color-boton: black;
-     --color-hover: rgb(116, 108, 108);
+     --color-hover: white;
      --color-letrabtn: white;  
-   
+     --color-letraHover:black;
  }
  :global(body.tema5) .foot{
     --color-foot: rgba(245, 6, 6, 0.658);
@@ -60,7 +62,8 @@
     --color-foot: rgba(239, 160, 14, 0.902);
      --color-boton: black;
      --color-letrabtn: yellow;  
-   
+     --color-hover: yellow;
+     --color-letraHover:black;
  }
 .btnLogout {
     background-color: var(--color-boton);

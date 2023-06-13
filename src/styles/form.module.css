@@ -2,13 +2,13 @@
 
 /* por dentro de la caja y fera de los input */
 
-.form{
-    background-color: white;
+.form {
+    background-color: rgba(255, 255, 255, 0.500); /* Color de fondo con transparencia */
     border-radius: 20px;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
 }
 
 

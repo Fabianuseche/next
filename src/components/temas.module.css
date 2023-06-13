@@ -46,12 +46,12 @@
   --color-backgroud: rgba(239, 160, 14, 0.902);
 }
 
-/* .preview {
+.preview {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
-} */
+}
 
 .temaButton{
     height: 50px;
