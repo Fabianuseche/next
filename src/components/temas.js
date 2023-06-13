@@ -51,7 +51,7 @@ function Temas() {
   }
 
   return (
-    <div className={styles.change}>
+    <div className={styles.change} style={{ zIndex: '9999' }}>
       <button
         className={styles.temaButton}
         style={{ backgroundColor: 'transparent', color: 'black' }}
@@ -68,7 +68,6 @@ function Temas() {
             style={{ backgroundColor: 'rgba(23, 242, 235, 0.516)', color: 'white' }}
             onClick={handleTema}
           />
-            
 
           <button
             className={styles.temaButton}
@@ -76,7 +75,6 @@ function Temas() {
             style={{ backgroundColor: 'lightgreen', color: 'white' }}
             onClick={handleTema}
           />
-            
 
           <button
             className={styles.temaButton}
@@ -84,7 +82,6 @@ function Temas() {
             style={{ backgroundColor: 'orange', color: 'white' }}
             onClick={handleTema}
           />
-           
 
           <button
             className={styles.temaButton}
@@ -92,7 +89,6 @@ function Temas() {
             style={{ backgroundColor: 'rgba(252, 0, 235, 0.356)', color: 'white' }}
             onClick={handleTema}
           />
-           
 
           <button
             className={styles.temaButton}
@@ -100,7 +96,6 @@ function Temas() {
             style={{ backgroundColor: 'black', color: 'white' }}
             onClick={handleTema}
           />
-            
 
           <button
             className={styles.temaButton}
@@ -108,7 +103,6 @@ function Temas() {
             style={{ backgroundColor: 'red', color: 'white' }}
             onClick={handleTema}
           />
-            
 
           <button
             className={styles.temaButton}
@@ -116,7 +110,6 @@ function Temas() {
             style={{ backgroundColor: 'yellow', color: 'black' }}
             onClick={handleTema}
           />
-            
 
           <button
             className={styles.temaButton}
@@ -124,8 +117,7 @@ function Temas() {
             style={{ backgroundColor: 'white', color: 'black' }}
             onClick={handleTema}
           />
-            
-       
+
           <input
             type="file"
             accept="image/*"
@@ -147,10 +139,3 @@ function Temas() {
 }
 
 export default Temas;
-
-
-
-
-
-
-
