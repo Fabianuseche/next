@@ -60,8 +60,8 @@ export default function Home() {
                 src={Calendar}
                 alt="calendar"
                 className={styles.slider}
-                style={{ backgroundImage: selectedFondo ? `url(${selectedFondo})` : 'none' }}
-/>
+                
+              />
             </Link>
             {/* {user && (
           

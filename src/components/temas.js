@@ -67,72 +67,64 @@ function Temas() {
             value="tema0"
             style={{ backgroundColor: 'rgba(23, 242, 235, 0.516)', color: 'white' }}
             onClick={handleTema}
-          >
-            Azul
-          </button>
+          />
+            
 
           <button
             className={styles.temaButton}
             value="tema1"
             style={{ backgroundColor: 'lightgreen', color: 'white' }}
             onClick={handleTema}
-          >
-            Verde
-          </button>
+          />
+            
 
           <button
             className={styles.temaButton}
             value="tema2"
             style={{ backgroundColor: 'orange', color: 'white' }}
             onClick={handleTema}
-          >
-            Naran
-          </button>
+          />
+           
 
           <button
             className={styles.temaButton}
             value="tema3"
             style={{ backgroundColor: 'rgba(252, 0, 235, 0.356)', color: 'white' }}
             onClick={handleTema}
-          >
-            Rosa
-          </button>
+          />
+           
 
           <button
             className={styles.temaButton}
             value="tema4"
             style={{ backgroundColor: 'black', color: 'white' }}
             onClick={handleTema}
-          >
-            Oscuro
-          </button>
+          />
+            
 
           <button
             className={styles.temaButton}
             value="tema5"
             style={{ backgroundColor: 'red', color: 'white' }}
             onClick={handleTema}
-          >
-            Rojo
-          </button>
+          />
+            
 
           <button
             className={styles.temaButton}
             value="tema6"
             style={{ backgroundColor: 'yellow', color: 'black' }}
             onClick={handleTema}
-          >
-            Amari
-          </button>
+          />
+            
 
           <button
             className={styles.temaButton}
             value="tema7"
             style={{ backgroundColor: 'white', color: 'black' }}
             onClick={handleTema}
-          >
-            Claro
-          </button>
+          />
+            
        
           <input
             type="file"
@@ -143,7 +135,7 @@ function Temas() {
           />
           <button
             className={styles.temaButton}
-            style={{ backgroundColor: 'transparent', color: 'black' }}
+            style={{ backgroundColor: 'aliceblue', color: 'black' }}
             onClick={() => fileInputRef.current.click()}
           >
             Foto

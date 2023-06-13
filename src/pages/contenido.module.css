@@ -1,20 +1,20 @@
 
-.form{
-  --color-forminput :rgb(0, 0, 0);
+.form {
+  --color-forminput: rgb(0, 0, 0);
   --color-formboton: rgb(0, 0, 0);
-  --color-formbotonletra:rgb(255, 255, 255);
-  --color-botonhover:rgb(255, 255, 255);
-  --color-botonhoverletra:rgb(0, 0, 0);
-
-    background-color: white;
-    border-radius: 20px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    border: solid 1px black;
-    margin-top: 40px;
-    height: 300px;
-    width: 250px;
+  --color-formbotonletra: rgb(255, 255, 255);
+  --color-botonhover: rgb(255, 255, 255);
+  --color-botonhoverletra: rgb(0, 0, 0);
+  background-color: rgba(255, 255, 255, 0.500);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border: solid 1px black;
+  margin-top: 40px;
+  height: 300px;
+  width: 250px;
 }
 
 :global(body.tema0) .form {
@@ -51,7 +51,13 @@
   --color-botonhover:white;
   --color-botonhoverletra:rgb(0, 0, 0);
 }
-
+:global(body.tema5) .form {
+  --color-forminput :rgb(0, 0, 0);
+  --color-formboton: rgb(240, 15, 15);
+  --color-formbotonletra:rgb(255, 255, 255);
+  --color-botonhover:rgba(244, 1, 1, 0.76);
+  --color-botonhoverletra:rgb(255, 255, 255);
+}
 :global(body.tema6) .form {
   --color-forminput :rgb(0, 0, 0);
   --color-formboton: rgb(0, 0, 0);
