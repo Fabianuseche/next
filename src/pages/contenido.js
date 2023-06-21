@@ -153,63 +153,6 @@ console.log(updatedData,updatedEvent.id, updatedData)
           ))}
         </div>
 
-        {showUpdateForm && updatedEvent && (
-          <div className={styles.updateForm}>
-            
-            <form onSubmit={handleUpdateSubmit}>
-              <input
-                type="text"
-                value={updatedEvent.name}
-                onChange={(e) =>
-                  setUpdatedEvent({
-                    ...updatedEvent,
-                    name: e.target.value,
-                  })
-                }
-                required
-                placeholder="Nombre del Evento"
-              />
-              <input
-                type="text"
-                value={updatedEvent.lugar}
-                onChange={(e) =>
-                  setUpdatedEvent({
-                    ...updatedEvent,
-                    lugar: e.target.value,
-                  })
-                }
-                required
-                placeholder="Lugar del Evento"
-              />
-              <input
-                type="date"
-                value={updatedEvent.date}
-                onChange={(e) =>
-                  setUpdatedEvent({
-                    ...updatedEvent,
-                    date: e.target.value,
-                  })
-                }
-                required
-                placeholder="Fecha del Evento"
-                min={dayjs().format("YYYY-MM-DD")}
-              />
-              <input
-                type="time"
-                value={updatedEvent.hora}
-                onChange={(e) =>
-                  setUpdatedEvent({
-                    ...updatedEvent,
-                    hora: e.target.value,
-                  })
-                }
-                required
-                placeholder="Hora del Evento"
-              />
-              <button type="submit">Guardar cambios</button>
-            </form>
-          </div>
-        )}
       </div>
       <Footer />
     </div>

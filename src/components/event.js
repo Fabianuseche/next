@@ -1,7 +1,7 @@
 import { updateEvent } from "@/pages/api/events";
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
-import { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./events.module.css";
 
 dayjs.extend(customParseFormat);
@@ -50,6 +50,19 @@ const Event = ({ id, name, date, lugar, hora, remove, update }) => {
   else {
     expiringSoon = null;
   }
+  
+  useEffect(() => {
+  console.log({date,name})
+    const twentyFourHours = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+    const eventDate = new Date(date);
+    const currentDate = new Date();
+    const timeDifference = eventDate.getTime() - currentDate.getTime();
+
+    if (timeDifference < twentyFourHours) {
+      alert(`El evento "${name}" está proximo a vencer.`);
+    }
+  }, []);
+
 
   return (
     <div className={styles.event}>
@@ -140,4 +153,4 @@ function datediff(d) {
   return days;
 }
 
-export default Event;
+export default React.memo(Event)

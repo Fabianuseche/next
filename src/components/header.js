@@ -22,10 +22,17 @@ function Header() {
 
   return (
     <header className={styles.header}>
+      
+
       <Link href="/" className={styles.logo}>
         <h2>AVRYL</h2>
         <Image src={logo2} alt="img" />
-      </Link>
+      </Link> 
+
+
+      
+            
+
       <div className={styles.manual}>
         {!user ? (
           <>
@@ -46,16 +53,16 @@ function Header() {
         ) : null}
       </div>
 
-      <div>
+      <div className="fun">
         {user ? (
           <>
             <div>
               <Link href="/change">
                 {user.firstname} {user.lastname}
               </Link>
-
-              
+             
             </div>
+          
           </>
         ) : null}
       </div>
