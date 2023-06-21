@@ -3,7 +3,7 @@ import Header from "@/components/header";
 import { useState, useEffect } from "react";
 import { useAuth } from "../components/auth";
 import { updateUser } from "./api/auth";
-import { BLOCKED_PAGES } from "next/dist/shared/lib/constants";
+
 
 function Change() {
   const { user, logout, login } = useAuth();
