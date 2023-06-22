@@ -72,7 +72,7 @@ export default function Home() {
           
           <div>
             {user && <h1>Bienvenido {user.firstname}</h1>}
-            <h1>Gestiona tus eventos, citas, tareas, etc.</h1>
+            <h1>Gestiona tus eventos, citas, tareas y más.</h1>
             
           </div>
           {!user && (
