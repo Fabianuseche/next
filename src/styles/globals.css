@@ -81,11 +81,12 @@ body {
   
 }
 
-.container h1, h3{
-  font-family: 'Charm', cursive;
-  color: var(--color-font-);
-  
-}
+  .container h1, h3{
+    font-family: 'Charm', cursive;
+    color: var(--color-font-);
+    /* -webkit-text-stroke: 0.1px gray; */
+    font-size: 40px
+  }
 
 .links {
   display: flex;

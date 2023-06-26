@@ -45,7 +45,10 @@ const LoginPage = () => {
       <div className="container">
         <div className={styles.form} >
           <input type="email" placeholder="email" ref={emailInput} required/> {/* Renderización del input de email con la referencia emailInput */}
-          <input type="password" placeholder="*******" ref={passInput} required/> {/* Renderización del input de contraseña con la referencia passInput */}
+          <input 
+          type="password" 
+          placeholder="*******" 
+          ref={passInput} required/> {/* Renderización del input de contraseña con la referencia passInput */}
 
           <button onClick={handlesubmit}>Iniciar Sesión</button> {/* Renderización del botón de inicio de sesión con el evento onClick que llama a la función handlesubmit */}
         </div>
