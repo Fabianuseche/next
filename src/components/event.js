@@ -31,6 +31,15 @@ const Event = ({ id, name, date, lugar, hora, remove, update }) => {
     setEventDate(formFecha.current.value);
     setEventHora(formHora.current.value);
 
+    // Guardar los cambios en el evento en el almacenamiento local
+    const updatedEvent = {
+      name: formNombre.current.value,
+      lugar: formLugar.current.value,
+      date: formFecha.current.value,
+      hora: formHora.current.value
+    };
+    localStorage.setItem(`event_${id}`, JSON.stringify(updatedEvent));
+
     setUpdating(false);
     update();
   }
@@ -57,28 +66,34 @@ const Event = ({ id, name, date, lugar, hora, remove, update }) => {
 
   if (daysDiff < 1) {
     expiringSoon = <div className={styles.expiring}>¡VENCE HOY!</div>;
-  } else if (daysDiff < 2)
+  } else if (daysDiff < 2) {
     expiringSoon = <div className={styles.expiring}>¡PROXIMO A VENCER!</div>;
-  else {
+  } else {
     expiringSoon = null;
   }
   
   useEffect(() => {
-    localStorage.setItem(`event_${id}`, JSON.stringify({ name, lugar, date, hora }));
+    const storedEvent = localStorage.getItem(`event_${id}`);
+
+    if (storedEvent) {
+      const { name, lugar, date, hora } = JSON.parse(storedEvent);
+      setEventName(name);
+      setEventLugar(lugar);
+      setEventDate(date);
+      setEventHora(hora);
+    }
   }, []);
 
   useEffect(() => {
-  console.log({date,name})
     const twentyFourHours = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
     const eventDate = new Date(date);
     const currentDate = new Date();
     const timeDifference = eventDate.getTime() - currentDate.getTime();
 
     if (timeDifference < twentyFourHours) {
-      alert(`El evento "${name}" está proximo a vencer.`);
+      alert(`El evento "${name}" está próximo a vencer.`);
     }
   }, []);
-
 
   return (
     <div className={styles.event}>
@@ -169,4 +184,4 @@ function datediff(d) {
   return days;
 }
 
-export default React.memo(Event)
+export default React.memo(Event);
