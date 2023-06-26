@@ -31,15 +31,6 @@ const Event = ({ id, name, date, lugar, hora, remove, update }) => {
     setEventDate(formFecha.current.value);
     setEventHora(formHora.current.value);
 
-    // Guardar los cambios en el evento en el almacenamiento local
-    const updatedEvent = {
-      name: formNombre.current.value,
-      lugar: formLugar.current.value,
-      date: formFecha.current.value,
-      hora: formHora.current.value
-    };
-    localStorage.setItem(`event_${id}`, JSON.stringify(updatedEvent));
-
     setUpdating(false);
     update();
   }
@@ -66,12 +57,16 @@ const Event = ({ id, name, date, lugar, hora, remove, update }) => {
 
   if (daysDiff < 1) {
     expiringSoon = <div className={styles.expiring}>¡VENCE HOY!</div>;
-  } else if (daysDiff < 2) {
+  } else if (daysDiff < 2)
     expiringSoon = <div className={styles.expiring}>¡PROXIMO A VENCER!</div>;
-  } else {
+  else {
     expiringSoon = null;
   }
-  
+
+  useEffect(() => {
+    localStorage.setItem(`event_${id}`, JSON.stringify({ name, lugar, date, hora }));
+  }, []);
+
   useEffect(() => {
     const storedEvent = localStorage.getItem(`event_${id}`);
 
@@ -82,18 +77,18 @@ const Event = ({ id, name, date, lugar, hora, remove, update }) => {
       setEventDate(date);
       setEventHora(hora);
     }
-  }, []);
+  }, [id]);
 
   useEffect(() => {
     const twentyFourHours = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
-    const eventDate = new Date(date);
+    const eventDate = new Date(eventDate);
     const currentDate = new Date();
     const timeDifference = eventDate.getTime() - currentDate.getTime();
 
     if (timeDifference < twentyFourHours) {
-      alert(`El evento "${name}" está próximo a vencer.`);
+      alert(`El evento "${eventName}" está próximo a vencer.`);
     }
-  }, []);
+  }, [eventDate, eventName]);
 
   return (
     <div className={styles.event}>
@@ -158,7 +153,7 @@ const Event = ({ id, name, date, lugar, hora, remove, update }) => {
           dayjs(hora, "HH:mm:ss").format("hh:mm a")
         )}
       </div>
-      
+
       <div className={styles.actions}>
         <div className={styles.buttonContainer}>
           <button onClick={confirmDelete}>Borrar</button>
