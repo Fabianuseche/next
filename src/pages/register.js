@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState  } from "react";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import styles from "@/styles/form.module.css";
@@ -6,6 +6,9 @@ import { useRouter } from "next/router";
 import { register } from "./api/auth";
 
 function RegisterPage() {
+
+  const [showPassword, setShowPassword] = useState(false);
+
   const router = useRouter();
 
   const firstnameInput = useRef();
@@ -79,15 +82,23 @@ function RegisterPage() {
             ref={emailInput}
             required
           />
+<input
+          name="password"
+          type={showPassword ? "text" : "password"}
+          placeholder="Contraseña"
+          ref={passwordInput}
+          required
+        />
+        <label>
           <input
-            name="password"
-            type="password"
-            placeholder="Contraseña"
-            ref={passwordInput}
-            required
+            type="checkbox"
+            checked={showPassword}
+            onChange={() => setShowPassword(!showPassword)}
           />
-          <button onClick={HandleReg}>Registro</button>
-        </div>
+          Mostrar contraseña
+        </label>
+        <button onClick={HandleReg}>Registro</button>
+      </div>
       </div>
       <Footer />
     </div>

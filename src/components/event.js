@@ -13,6 +13,11 @@ const Event = ({ id, name, date, lugar, hora, remove, update }) => {
   const formFecha = useRef();
   const formHora = useRef();
 
+  const [eventName, setEventName] = useState(name);
+  const [eventLugar, setEventLugar] = useState(lugar);
+  const [eventDate, setEventDate] = useState(date);
+  const [eventHora, setEventHora] = useState(hora);
+
   async function handleUpdateEvent() {
     await updateEvent(id, {
       name: formNombre.current.value,
@@ -20,6 +25,12 @@ const Event = ({ id, name, date, lugar, hora, remove, update }) => {
       date: formFecha.current.value,
       hora: formHora.current.value
     });
+
+    setEventName(formNombre.current.value);
+    setEventLugar(formLugar.current.value);
+    setEventDate(formFecha.current.value);
+    setEventHora(formHora.current.value);
+
     setUpdating(false);
     update();
   }
@@ -27,6 +38,7 @@ const Event = ({ id, name, date, lugar, hora, remove, update }) => {
   function confirmDelete() {
     const confirmDelete = window.confirm('¿Estás seguro de que deseas borrar el evento?');
     if (confirmDelete) {
+      localStorage.removeItem(`event_${id}`);
       remove();
     }
   }
@@ -51,6 +63,10 @@ const Event = ({ id, name, date, lugar, hora, remove, update }) => {
     expiringSoon = null;
   }
   
+  useEffect(() => {
+    localStorage.setItem(`event_${id}`, JSON.stringify({ name, lugar, date, hora }));
+  }, []);
+
   useEffect(() => {
   console.log({date,name})
     const twentyFourHours = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
