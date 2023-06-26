@@ -12,11 +12,19 @@ const Event = ({ id, name, date, lugar, hora, remove, update }) => {
   const formLugar = useRef();
   const formFecha = useRef();
   const formHora = useRef();
+  const [events, setEvents] = useState([]);
 
-  const [eventName, setEventName] = useState(name);
-  const [eventLugar, setEventLugar] = useState(lugar);
-  const [eventDate, setEventDate] = useState(date);
-  const [eventHora, setEventHora] = useState(hora);
+  function saveEventsToLocalStorage(events) {
+    localStorage.setItem('events', JSON.stringify(events));
+  }
+
+  useEffect(() => {
+    const storedEvents = localStorage.getItem('events');
+    if (storedEvents) {
+      const parsedEvents = JSON.parse(storedEvents);
+      setEvents(parsedEvents);
+    }
+  }, []);
 
   async function handleUpdateEvent() {
     await updateEvent(id, {
@@ -25,20 +33,23 @@ const Event = ({ id, name, date, lugar, hora, remove, update }) => {
       date: formFecha.current.value,
       hora: formHora.current.value
     });
-
-    setEventName(formNombre.current.value);
-    setEventLugar(formLugar.current.value);
-    setEventDate(formFecha.current.value);
-    setEventHora(formHora.current.value);
-
     setUpdating(false);
     update();
+
+    const updatedEvents = [...events];
+    const eventToUpdate = updatedEvents.find(event => event.id === id);
+    if (eventToUpdate) {
+      eventToUpdate.name = formNombre.current.value;
+      eventToUpdate.lugar = formLugar.current.value;
+      eventToUpdate.date = formFecha.current.value;
+      eventToUpdate.hora = formHora.current.value;
+      saveEventsToLocalStorage(updatedEvents);
+    }
   }
 
   function confirmDelete() {
     const confirmDelete = window.confirm('¿Estás seguro de que deseas borrar el evento?');
     if (confirmDelete) {
-      localStorage.removeItem(`event_${id}`);
       remove();
     }
   }
@@ -57,38 +68,22 @@ const Event = ({ id, name, date, lugar, hora, remove, update }) => {
 
   if (daysDiff < 1) {
     expiringSoon = <div className={styles.expiring}>¡VENCE HOY!</div>;
-  } else if (daysDiff < 2)
+  } else if (daysDiff < 2) {
     expiringSoon = <div className={styles.expiring}>¡PROXIMO A VENCER!</div>;
-  else {
+  } else {
     expiringSoon = null;
   }
 
   useEffect(() => {
-    localStorage.setItem(`event_${id}`, JSON.stringify({ name, lugar, date, hora }));
-  }, []);
-
-  useEffect(() => {
-    const storedEvent = localStorage.getItem(`event_${id}`);
-
-    if (storedEvent) {
-      const { name, lugar, date, hora } = JSON.parse(storedEvent);
-      setEventName(name);
-      setEventLugar(lugar);
-      setEventDate(date);
-      setEventHora(hora);
-    }
-  }, [id]);
-
-  useEffect(() => {
     const twentyFourHours = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
-    const eventDate = new Date(eventDate);
+    const eventDate = new Date(date);
     const currentDate = new Date();
     const timeDifference = eventDate.getTime() - currentDate.getTime();
 
     if (timeDifference < twentyFourHours) {
-      alert(`El evento "${eventName}" está próximo a vencer.`);
+      alert(`El evento "${name}" está próximo a vencer.`);
     }
-  }, [eventDate, eventName]);
+  }, []);
 
   return (
     <div className={styles.event}>
@@ -153,7 +148,7 @@ const Event = ({ id, name, date, lugar, hora, remove, update }) => {
           dayjs(hora, "HH:mm:ss").format("hh:mm a")
         )}
       </div>
-
+      
       <div className={styles.actions}>
         <div className={styles.buttonContainer}>
           <button onClick={confirmDelete}>Borrar</button>
