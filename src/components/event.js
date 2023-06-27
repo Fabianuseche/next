@@ -3,6 +3,7 @@ import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./events.module.css";
+import { listEvent } from "@/pages/api/events.js";
 
 dayjs.extend(customParseFormat);
 
@@ -12,19 +13,6 @@ const Event = ({ id, name, date, lugar, hora, remove, update }) => {
   const formLugar = useRef();
   const formFecha = useRef();
   const formHora = useRef();
-  const [events, setEvents] = useState([]);
-
-  function saveEventsToLocalStorage(events) {
-    localStorage.setItem('events', JSON.stringify(events));
-  }
-
-  useEffect(() => {
-    const storedEvents = localStorage.getItem('events');
-    if (storedEvents) {
-      const parsedEvents = JSON.parse(storedEvents);
-      setEvents(parsedEvents);
-    }
-  }, []);
 
   async function handleUpdateEvent() {
     await updateEvent(id, {
@@ -33,18 +21,21 @@ const Event = ({ id, name, date, lugar, hora, remove, update }) => {
       date: formFecha.current.value,
       hora: formHora.current.value
     });
+{/************************************************************** */}
+    const updatedEvent = {
+      id,
+      name: formNombre.current.value,
+      lugar: formLugar.current.value,
+      date: formFecha.current.value,
+      hora: formHora.current.value
+    };
+    const events = JSON.parse(localStorage.getItem('events')) || [];
+    const updatedEvents = [...events.filter(event => event.id !== id), updatedEvent];
+    localStorage.setItem('events', JSON.stringify(updatedEvents));
+    
+{/************************************************************** */}
     setUpdating(false);
     update();
-
-    const updatedEvents = [...events];
-    const eventToUpdate = updatedEvents.find(event => event.id === id);
-    if (eventToUpdate) {
-      eventToUpdate.name = formNombre.current.value;
-      eventToUpdate.lugar = formLugar.current.value;
-      eventToUpdate.date = formFecha.current.value;
-      eventToUpdate.hora = formHora.current.value;
-      saveEventsToLocalStorage(updatedEvents);
-    }
   }
 
   function confirmDelete() {
@@ -68,22 +59,24 @@ const Event = ({ id, name, date, lugar, hora, remove, update }) => {
 
   if (daysDiff < 1) {
     expiringSoon = <div className={styles.expiring}>¡VENCE HOY!</div>;
-  } else if (daysDiff < 2) {
+  } else if (daysDiff < 2)
     expiringSoon = <div className={styles.expiring}>¡PROXIMO A VENCER!</div>;
-  } else {
+  else {
     expiringSoon = null;
   }
-
+  
   useEffect(() => {
+  console.log({date,name})
     const twentyFourHours = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
     const eventDate = new Date(date);
     const currentDate = new Date();
     const timeDifference = eventDate.getTime() - currentDate.getTime();
 
     if (timeDifference < twentyFourHours) {
-      alert(`El evento "${name}" está próximo a vencer.`);
+      alert(`El evento "${name}" está proximo a vencer.`);
     }
   }, []);
+
 
   return (
     <div className={styles.event}>
@@ -174,4 +167,4 @@ function datediff(d) {
   return days;
 }
 
-export default React.memo(Event);
+export default React.memo(Event)
