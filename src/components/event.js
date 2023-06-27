@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./events.module.css";
-import { listEvent } from "@/pages/api/events.js";
+
 
 dayjs.extend(customParseFormat);
 
@@ -21,19 +21,7 @@ const Event = ({ id, name, date, lugar, hora, remove, update }) => {
       date: formFecha.current.value,
       hora: formHora.current.value
     });
-{/************************************************************** */}
-    const updatedEvent = {
-      id,
-      name: formNombre.current.value,
-      lugar: formLugar.current.value,
-      date: formFecha.current.value,
-      hora: formHora.current.value
-    };
-    const events = JSON.parse(localStorage.getItem('events')) || [];
-    const updatedEvents = [...events.filter(event => event.id !== id), updatedEvent];
-    localStorage.setItem('events', JSON.stringify(updatedEvents));
-    
-{/************************************************************** */}
+
     setUpdating(false);
     update();
   }
