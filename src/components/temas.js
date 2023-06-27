@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './temas.module.css';
-import { listEvent } from '@/pages/api/events';
+
 
 function Temas(user_id) {
   const [mostrarTemas, setMostrarTemas] = useState(false);
@@ -32,13 +32,7 @@ function Temas(user_id) {
 
     // Guardar el tema seleccionado en el localStorage
     localStorage.setItem('tema', temaSeleccionado);
-{/************************************************************** */}
- // Obtener los eventos y guardarlos en el localStorage
-  listEvent(user_id).then(response => {
-  const events = response.events || [];
-  localStorage.setItem('events', JSON.stringify(events));
-});
-{/************************************************************** */}
+
     setMostrarTemas(!mostrarTemas);
   }
 

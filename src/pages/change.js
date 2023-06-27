@@ -4,23 +4,22 @@ import { useState, useEffect } from "react";
 import { useAuth } from "../components/auth";
 import { updateUser } from "./api/auth";
 
-
 function Change() {
   const { user, logout, login } = useAuth();
   const [editMode, setEditMode] = useState(false);
   const [formData, setFormData] = useState({
-    firstname: user?.firstname || "",
-    lastname: user?.lastname || "",
+    firstname: "",
+    lastname: "",
   });
 
   useEffect(() => {
-    const firstname = localStorage.getItem("firstname");
-    const lastname = localStorage.getItem("lastname");
-
-    if (firstname && lastname) {
-      setFormData({ firstname, lastname });
+    if (user) {
+      setFormData({
+        firstname: user.firstname || "",
+        lastname: user.lastname || "",
+      });
     }
-  }, []);
+  }, [user]);
 
   const handleInputChange = (e) => {
     setFormData({
@@ -92,7 +91,7 @@ function Change() {
                   </form>
                 ) : (
                   <>
-                    {user.firstname} {user.lastname}
+                    {formData.firstname} {formData.lastname}
                     <button
                       onClick={() => setEditMode(true)}
                       style={{
@@ -104,7 +103,6 @@ function Change() {
                         cursor: "pointer",
                         marginLeft: "30px",
                         fontWeight: "bold"
-                        
                       }}
                     >
                       Editar
@@ -122,4 +120,3 @@ function Change() {
 }
 
 export default Change;
-  
